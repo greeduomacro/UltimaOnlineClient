@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F4E5C0E1CB94B8000BC8E04 /* FileManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E5C0D1CB94B8000BC8E04 /* FileManager.cpp */; };
+		2F4E5C111CB94CA000BC8E04 /* File.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E5C0F1CB94CA000BC8E04 /* File.cpp */; };
 		2FDB1D301C4A690800565F94 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FDB1D2F1C4A690800565F94 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +25,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2F4E5C0B1CB93B9500BC8E04 /* FileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
+		2F4E5C0D1CB94B8000BC8E04 /* FileManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileManager.cpp; sourceTree = "<group>"; };
+		2F4E5C0F1CB94CA000BC8E04 /* File.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = File.cpp; sourceTree = "<group>"; };
+		2F4E5C101CB94CA000BC8E04 /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = File.h; sourceTree = "<group>"; };
 		2FDB1D2C1C4A690800565F94 /* UltimaOnlineCore */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = UltimaOnlineCore; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FDB1D2F1C4A690800565F94 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -41,8 +47,19 @@
 		2F4E5C0A1CB9377700BC8E04 /* FileManager */ = {
 			isa = PBXGroup;
 			children = (
+				2F4E5C0B1CB93B9500BC8E04 /* FileManager.h */,
+				2F4E5C0D1CB94B8000BC8E04 /* FileManager.cpp */,
+				2F4E5C101CB94CA000BC8E04 /* File.h */,
+				2F4E5C0F1CB94CA000BC8E04 /* File.cpp */,
 			);
 			path = FileManager;
+			sourceTree = "<group>";
+		};
+		2F4E5C0C1CB93F1000BC8E04 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Core;
 			sourceTree = "<group>";
 		};
 		2FDB1D231C4A690800565F94 = {
@@ -64,6 +81,7 @@
 		2FDB1D2E1C4A690800565F94 /* UltimaOnlineCore */ = {
 			isa = PBXGroup;
 			children = (
+				2F4E5C0C1CB93F1000BC8E04 /* Core */,
 				2F4E5C0A1CB9377700BC8E04 /* FileManager */,
 				2FDB1D2F1C4A690800565F94 /* main.cpp */,
 			);
@@ -126,7 +144,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F4E5C111CB94CA000BC8E04 /* File.cpp in Sources */,
 				2FDB1D301C4A690800565F94 /* main.cpp in Sources */,
+				2F4E5C0E1CB94B8000BC8E04 /* FileManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,7 +175,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -198,7 +218,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
