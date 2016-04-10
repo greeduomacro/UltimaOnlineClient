@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		2F4E5C0E1CB94B8000BC8E04 /* FileManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E5C0D1CB94B8000BC8E04 /* FileManager.cpp */; };
 		2F4E5C111CB94CA000BC8E04 /* File.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E5C0F1CB94CA000BC8E04 /* File.cpp */; };
+		2F4E5C141CBA7C6200BC8E04 /* FileReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E5C121CBA7C6200BC8E04 /* FileReader.cpp */; };
+		2F4E5C191CBA968600BC8E04 /* Parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E5C171CBA968600BC8E04 /* Parser.cpp */; };
+		2F4E5C1C1CBA9C2300BC8E04 /* ArtParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E5C1A1CBA9C2300BC8E04 /* ArtParser.cpp */; };
+		2F4E5C1F1CBAA0A900BC8E04 /* IndexParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E5C1D1CBAA0A900BC8E04 /* IndexParser.cpp */; };
+		2F4E5C231CBAB88000BC8E04 /* Asset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E5C211CBAB88000BC8E04 /* Asset.cpp */; };
+		2F4E5C261CBAB98C00BC8E04 /* IndexAsset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E5C241CBAB98C00BC8E04 /* IndexAsset.cpp */; };
+		2F4E5C2A1CBAD90800BC8E04 /* SkillAsset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E5C281CBAD90800BC8E04 /* SkillAsset.cpp */; };
+		2F4E5C2D1CBAE22600BC8E04 /* SkillParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E5C2B1CBAE22600BC8E04 /* SkillParser.cpp */; };
 		2FDB1D301C4A690800565F94 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FDB1D2F1C4A690800565F94 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +37,24 @@
 		2F4E5C0D1CB94B8000BC8E04 /* FileManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileManager.cpp; sourceTree = "<group>"; };
 		2F4E5C0F1CB94CA000BC8E04 /* File.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = File.cpp; sourceTree = "<group>"; };
 		2F4E5C101CB94CA000BC8E04 /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = File.h; sourceTree = "<group>"; };
+		2F4E5C121CBA7C6200BC8E04 /* FileReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileReader.cpp; sourceTree = "<group>"; };
+		2F4E5C131CBA7C6200BC8E04 /* FileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileReader.h; sourceTree = "<group>"; };
+		2F4E5C151CBA7D4300BC8E04 /* Types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
+		2F4E5C171CBA968600BC8E04 /* Parser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Parser.cpp; sourceTree = "<group>"; };
+		2F4E5C181CBA968600BC8E04 /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
+		2F4E5C1A1CBA9C2300BC8E04 /* ArtParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ArtParser.cpp; sourceTree = "<group>"; };
+		2F4E5C1B1CBA9C2300BC8E04 /* ArtParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtParser.h; sourceTree = "<group>"; };
+		2F4E5C1D1CBAA0A900BC8E04 /* IndexParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IndexParser.cpp; sourceTree = "<group>"; };
+		2F4E5C1E1CBAA0A900BC8E04 /* IndexParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexParser.h; sourceTree = "<group>"; };
+		2F4E5C211CBAB88000BC8E04 /* Asset.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Asset.cpp; sourceTree = "<group>"; };
+		2F4E5C221CBAB88000BC8E04 /* Asset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Asset.h; sourceTree = "<group>"; };
+		2F4E5C241CBAB98C00BC8E04 /* IndexAsset.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IndexAsset.cpp; sourceTree = "<group>"; };
+		2F4E5C251CBAB98C00BC8E04 /* IndexAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexAsset.h; sourceTree = "<group>"; };
+		2F4E5C271CBABE9400BC8E04 /* Types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
+		2F4E5C281CBAD90800BC8E04 /* SkillAsset.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkillAsset.cpp; sourceTree = "<group>"; };
+		2F4E5C291CBAD90800BC8E04 /* SkillAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillAsset.h; sourceTree = "<group>"; };
+		2F4E5C2B1CBAE22600BC8E04 /* SkillParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkillParser.cpp; sourceTree = "<group>"; };
+		2F4E5C2C1CBAE22600BC8E04 /* SkillParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillParser.h; sourceTree = "<group>"; };
 		2FDB1D2C1C4A690800565F94 /* UltimaOnlineCore */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = UltimaOnlineCore; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FDB1D2F1C4A690800565F94 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -44,28 +70,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2F4E5C0A1CB9377700BC8E04 /* FileManager */ = {
+		2F4E5C0A1CB9377700BC8E04 /* File */ = {
 			isa = PBXGroup;
 			children = (
-				2F4E5C0B1CB93B9500BC8E04 /* FileManager.h */,
-				2F4E5C0D1CB94B8000BC8E04 /* FileManager.cpp */,
-				2F4E5C101CB94CA000BC8E04 /* File.h */,
 				2F4E5C0F1CB94CA000BC8E04 /* File.cpp */,
+				2F4E5C101CB94CA000BC8E04 /* File.h */,
+				2F4E5C0D1CB94B8000BC8E04 /* FileManager.cpp */,
+				2F4E5C0B1CB93B9500BC8E04 /* FileManager.h */,
+				2F4E5C121CBA7C6200BC8E04 /* FileReader.cpp */,
+				2F4E5C131CBA7C6200BC8E04 /* FileReader.h */,
+				2F4E5C151CBA7D4300BC8E04 /* Types.h */,
 			);
+			name = File;
 			path = FileManager;
 			sourceTree = "<group>";
 		};
 		2F4E5C0C1CB93F1000BC8E04 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				2F4E5C201CBAB85900BC8E04 /* Asset */,
+				2F4E5C161CBA843900BC8E04 /* Parser */,
+				2F4E5C0A1CB9377700BC8E04 /* File */,
 			);
 			name = Core;
+			sourceTree = "<group>";
+		};
+		2F4E5C161CBA843900BC8E04 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				2F4E5C1A1CBA9C2300BC8E04 /* ArtParser.cpp */,
+				2F4E5C1B1CBA9C2300BC8E04 /* ArtParser.h */,
+				2F4E5C1D1CBAA0A900BC8E04 /* IndexParser.cpp */,
+				2F4E5C1E1CBAA0A900BC8E04 /* IndexParser.h */,
+				2F4E5C171CBA968600BC8E04 /* Parser.cpp */,
+				2F4E5C181CBA968600BC8E04 /* Parser.h */,
+				2F4E5C2B1CBAE22600BC8E04 /* SkillParser.cpp */,
+				2F4E5C2C1CBAE22600BC8E04 /* SkillParser.h */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		2F4E5C201CBAB85900BC8E04 /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				2F4E5C211CBAB88000BC8E04 /* Asset.cpp */,
+				2F4E5C221CBAB88000BC8E04 /* Asset.h */,
+				2F4E5C241CBAB98C00BC8E04 /* IndexAsset.cpp */,
+				2F4E5C251CBAB98C00BC8E04 /* IndexAsset.h */,
+				2F4E5C281CBAD90800BC8E04 /* SkillAsset.cpp */,
+				2F4E5C291CBAD90800BC8E04 /* SkillAsset.h */,
+			);
+			path = Asset;
 			sourceTree = "<group>";
 		};
 		2FDB1D231C4A690800565F94 = {
 			isa = PBXGroup;
 			children = (
-				2FDB1D2E1C4A690800565F94 /* UltimaOnlineCore */,
+				2FDB1D2E1C4A690800565F94 /* Source */,
 				2FDB1D2D1C4A690800565F94 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,13 +139,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2FDB1D2E1C4A690800565F94 /* UltimaOnlineCore */ = {
+		2FDB1D2E1C4A690800565F94 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				2F4E5C0C1CB93F1000BC8E04 /* Core */,
-				2F4E5C0A1CB9377700BC8E04 /* FileManager */,
 				2FDB1D2F1C4A690800565F94 /* main.cpp */,
+				2F4E5C271CBABE9400BC8E04 /* Types.h */,
+				2F4E5C0C1CB93F1000BC8E04 /* Core */,
 			);
+			name = Source;
 			path = UltimaOnlineCore;
 			sourceTree = "<group>";
 		};
@@ -146,7 +208,15 @@
 			files = (
 				2F4E5C111CB94CA000BC8E04 /* File.cpp in Sources */,
 				2FDB1D301C4A690800565F94 /* main.cpp in Sources */,
+				2F4E5C2A1CBAD90800BC8E04 /* SkillAsset.cpp in Sources */,
+				2F4E5C2D1CBAE22600BC8E04 /* SkillParser.cpp in Sources */,
+				2F4E5C231CBAB88000BC8E04 /* Asset.cpp in Sources */,
+				2F4E5C141CBA7C6200BC8E04 /* FileReader.cpp in Sources */,
+				2F4E5C191CBA968600BC8E04 /* Parser.cpp in Sources */,
+				2F4E5C1C1CBA9C2300BC8E04 /* ArtParser.cpp in Sources */,
 				2F4E5C0E1CB94B8000BC8E04 /* FileManager.cpp in Sources */,
+				2F4E5C1F1CBAA0A900BC8E04 /* IndexParser.cpp in Sources */,
+				2F4E5C261CBAB98C00BC8E04 /* IndexAsset.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

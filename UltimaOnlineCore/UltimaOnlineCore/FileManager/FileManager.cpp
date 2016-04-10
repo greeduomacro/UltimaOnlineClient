@@ -7,7 +7,9 @@
 //
 
 #include "FileManager.h"
+#include "Types.h"
 #include <sys/stat.h>
+#include <dirent.h>
 
 using namespace std;
 
@@ -100,6 +102,30 @@ namespace core {
                     return false;
             }
             return true;
+        }
+        
+        int FileManager::listFiles(const char* path, std::vector<std::string>* v, bool recursively) {
+            int numFiles = 0;
+            if (this->isDirectory(path)) {
+                DIR *dir = opendir(path);
+                struct dirent *dp;
+                while ((dp=readdir(dir)) != NULL) {
+                    if (!strcmp(dp->d_name, ".") || !strcmp(dp->d_name, "..")) {
+                        continue;
+                    }
+                    std::string pathFolder(path);
+                    pathFolder.append(PATH_SEPARATOR);
+                    pathFolder.append(dp->d_name);
+                    if (dp->d_type == DT_DIR) {
+                        this->listFiles(pathFolder.c_str(), v);
+                    } else {
+                        ++numFiles;
+                        v->push_back(pathFolder);
+                    }
+                }
+                (void)closedir(dir);
+            }
+            return numFiles;
         }
         
         FileManager& FileManager::getInstance() {

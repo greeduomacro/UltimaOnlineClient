@@ -6,14 +6,12 @@
 //  Copyright © 2016 Hercules Junior. All rights reserved.
 //
 
-#ifndef FileManager_h
-#define FileManager_h
-
-#define PATH_SEPARATOR '/'
+#ifndef CORE_FILE_FileManager_h
+#define CORE_FILE_FileManager_h
 
 #include <string.h>
 #include <map>
-
+#include <vector>
 #include "File.h"
 
 namespace core {
@@ -39,6 +37,8 @@ namespace core {
             
             bool isDirectory(const char* path) const;
             
+            int listFiles(const char* path, std::vector<std::string>* files, bool recursively = false);
+            
             File* open(const char* file, const char* mode);
             
             void close(File *file);
@@ -55,4 +55,4 @@ namespace core {
 }
 
 
-#endif /* FileManager_h */
+#endif /* CORE_FILE_FileManager_h */

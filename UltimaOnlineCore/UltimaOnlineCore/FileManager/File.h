@@ -6,8 +6,8 @@
 //  Copyright © 2016 Hercules Junior. All rights reserved.
 //
 
-#ifndef File_h
-#define File_h
+#ifndef CORE_FILE_File_h
+#define CORE_FILE_File_h
 
 #include <stdio.h>
 #include <string>
@@ -39,4 +39,4 @@ namespace core {
 }
 
 
-#endif /* File_h */
+#endif /* CORE_FILE_File_h */
