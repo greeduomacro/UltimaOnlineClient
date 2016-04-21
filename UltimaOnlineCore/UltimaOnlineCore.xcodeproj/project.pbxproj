@@ -12,9 +12,7 @@
 		2F4E5C0E1CB94B8000BC8E04 /* FileManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E5C0D1CB94B8000BC8E04 /* FileManager.cpp */; };
 		2F4E5C111CB94CA000BC8E04 /* File.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E5C0F1CB94CA000BC8E04 /* File.cpp */; };
 		2F4E5C141CBA7C6200BC8E04 /* FileReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E5C121CBA7C6200BC8E04 /* FileReader.cpp */; };
-		2F4E5C191CBA968600BC8E04 /* Parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E5C171CBA968600BC8E04 /* Parser.cpp */; };
 		2F4E5C231CBAB88000BC8E04 /* Asset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E5C211CBAB88000BC8E04 /* Asset.cpp */; };
-		2F4E5C261CBAB98C00BC8E04 /* IndexAsset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E5C241CBAB98C00BC8E04 /* IndexAsset.cpp */; };
 		2F4E5C2A1CBAD90800BC8E04 /* Skill.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E5C281CBAD90800BC8E04 /* Skill.cpp */; };
 		2FDB1D301C4A690800565F94 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FDB1D2F1C4A690800565F94 /* main.cpp */; };
 /* End PBXBuildFile section */
@@ -44,12 +42,8 @@
 		2F4E5C121CBA7C6200BC8E04 /* FileReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileReader.cpp; sourceTree = "<group>"; };
 		2F4E5C131CBA7C6200BC8E04 /* FileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileReader.h; sourceTree = "<group>"; };
 		2F4E5C151CBA7D4300BC8E04 /* Types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
-		2F4E5C171CBA968600BC8E04 /* Parser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Parser.cpp; sourceTree = "<group>"; };
-		2F4E5C181CBA968600BC8E04 /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
 		2F4E5C211CBAB88000BC8E04 /* Asset.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Asset.cpp; sourceTree = "<group>"; };
 		2F4E5C221CBAB88000BC8E04 /* Asset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Asset.h; sourceTree = "<group>"; };
-		2F4E5C241CBAB98C00BC8E04 /* IndexAsset.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IndexAsset.cpp; sourceTree = "<group>"; };
-		2F4E5C251CBAB98C00BC8E04 /* IndexAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexAsset.h; sourceTree = "<group>"; };
 		2F4E5C271CBABE9400BC8E04 /* Types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
 		2F4E5C281CBAD90800BC8E04 /* Skill.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Skill.cpp; sourceTree = "<group>"; };
 		2F4E5C291CBAD90800BC8E04 /* Skill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Skill.h; sourceTree = "<group>"; };
@@ -96,19 +90,9 @@
 			children = (
 				04C5CDF71CC7E66000D0BD13 /* Types */,
 				2F4E5C201CBAB85900BC8E04 /* Asset */,
-				2F4E5C161CBA843900BC8E04 /* Parser */,
 				2F4E5C0A1CB9377700BC8E04 /* File */,
 			);
 			name = Core;
-			sourceTree = "<group>";
-		};
-		2F4E5C161CBA843900BC8E04 /* Parser */ = {
-			isa = PBXGroup;
-			children = (
-				2F4E5C171CBA968600BC8E04 /* Parser.cpp */,
-				2F4E5C181CBA968600BC8E04 /* Parser.h */,
-			);
-			path = Parser;
 			sourceTree = "<group>";
 		};
 		2F4E5C201CBAB85900BC8E04 /* Asset */ = {
@@ -116,14 +100,12 @@
 			children = (
 				2F4E5C211CBAB88000BC8E04 /* Asset.cpp */,
 				2F4E5C221CBAB88000BC8E04 /* Asset.h */,
-				2F4E5C241CBAB98C00BC8E04 /* IndexAsset.cpp */,
-				2F4E5C251CBAB98C00BC8E04 /* IndexAsset.h */,
 				2F4E5C281CBAD90800BC8E04 /* Skill.cpp */,
 				2F4E5C291CBAD90800BC8E04 /* Skill.h */,
 				04C5CDF81CC7E8C300D0BD13 /* SkillGroup.cpp */,
 				04C5CDF91CC7E8C300D0BD13 /* SkillGroup.h */,
-				044D8A741CC7F71D0085AF5B /* Skills.h */,
 				044D8A751CC7F71D0085AF5B /* Skills.cpp */,
+				044D8A741CC7F71D0085AF5B /* Skills.h */,
 			);
 			path = Asset;
 			sourceTree = "<group>";
@@ -217,9 +199,7 @@
 				2F4E5C2A1CBAD90800BC8E04 /* Skill.cpp in Sources */,
 				2F4E5C231CBAB88000BC8E04 /* Asset.cpp in Sources */,
 				2F4E5C141CBA7C6200BC8E04 /* FileReader.cpp in Sources */,
-				2F4E5C191CBA968600BC8E04 /* Parser.cpp in Sources */,
 				2F4E5C0E1CB94B8000BC8E04 /* FileManager.cpp in Sources */,
-				2F4E5C261CBAB98C00BC8E04 /* IndexAsset.cpp in Sources */,
 				044D8A761CC7F71D0085AF5B /* Skills.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

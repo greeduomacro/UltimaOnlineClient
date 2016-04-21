@@ -21,10 +21,10 @@ namespace core {
         public:
             Skills();
             ~Skills();
+            std::vector<core::asset::Skill*> _skills;
+            std::vector<core::asset::SkillGroup*> _skillGroups;
         private:
-            core::asset::SkillGroup *_skillGroups;
-            core::asset::Skill *_skills;
-            int _count;
+            
         };
     }
 }

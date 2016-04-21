@@ -25,13 +25,105 @@ namespace core {
             FileManager::getInstance().close(_file);
         }
         
+        int8_t FileReader::parseInt8() {
+            int8_t num;
+            this->read(&num, sizeof(num));
+            return num;
+        }
+        
+        uint8_t FileReader::parseUInt8() {
+            uint8_t num;
+            this->read(&num, sizeof(num));
+            return num;
+        }
+        
+        int16_t FileReader::parseInt16() {
+            int16_t num;
+            this->read(&num, sizeof(num));
+            return num;
+        }
+        
+        uint16_t FileReader::parseUInt16() {
+            uint16_t num;
+            this->read(&num, sizeof(num));
+            return num;
+        }
+        
+        int32_t FileReader::parseInt32() {
+            int32_t num;
+            this->read(&num, sizeof(num));
+            return num;
+        }
+        
+        uint32_t FileReader::parseUInt32() {
+            uint32_t num;
+            this->read(&num, sizeof(num));
+            return num;
+        }
+        
+        int64_t FileReader::parseInt64() {
+            int64_t num;
+            this->read(&num, sizeof(num));
+            return num;
+        }
+        
+        uint64_t FileReader::parseUInt64() {
+            uint64_t num;
+            this->read(&num, sizeof(num));
+            return num;
+        }
+        
+        char* FileReader::parseCStr() {
+            pushPosition();
+            int length = 0;
+            while (fgetc(_file->getFile()) != '\0') {
+                ++length;
+            }
+            popPosition(true);
+            char* buffer = new char[length + 1 * (sizeof(char))];
+            if (length > 0) {
+                size_t readBytes = this->read(buffer, length);
+                buffer[readBytes] = '\0';
+            }
+            return buffer;
+        }
+        
+        char* FileReader::parseCStrOfSize(uint32_t length) {
+            char* buffer = new char[length + 1 * (sizeof(char))];
+            if (length > 0) {
+                size_t readBytes = this->read(buffer, length);
+                buffer[readBytes] = '\0';
+            }
+            return buffer;
+        }
+        
+        char* FileReader::parseByteArray(uint32_t numberOfBytes) {
+            char* buffer = new char[numberOfBytes];
+            if (numberOfBytes > 0) {
+                this->read(buffer, numberOfBytes);
+            }
+            return buffer;
+        }
+        
+        float FileReader::parseFloat() {
+            float num;
+            this->read(&num, sizeof(num));
+            return num;
+        }
+        
+        bool FileReader::parseBool() {
+            bool boolean;
+            this->read(&boolean, sizeof(boolean));
+            return boolean;
+        }
+
+        
         void FileReader::reset() {
             _position = 0;
             rewind(_file->getFile());
         }
         
         bool FileReader::isEOF() {
-            
             return _position >= (long) size();
         }
         

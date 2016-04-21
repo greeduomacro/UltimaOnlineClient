@@ -20,29 +20,28 @@ int main(int argc, const char * argv[]) {
     //skills.idx
     //skills.mul
     
-    core::file::FileManager &fileManager = core::file::FileManager::getInstance();
-    std::vector<std::string> myVector;
-    int files = fileManager.listFiles("/Users/herculesjr/Development/UltimaOnlineClient/UOFiles", &myVector, true);
-    std::cout << files << std::endl;
-    for (auto &i : myVector) {
-        std::cout << i << std::endl;
+//    core::file::FileManager &fileManager = core::file::FileManager::getInstance();
+//    std::vector<std::string> myVector;
+//    int files = fileManager.listFiles("/Users/herculesjr/Development/UltimaOnlineClient/UOFiles", &myVector, true);
+//    std::cout << files << std::endl;
+//    for (auto &i : myVector) {
+//        std::cout << i << std::endl;
+//    }
+    
+    core::asset::Skills *skills = new core::asset::Skills();
+    
+    for (core::asset::SkillGroup *group : skills->_skillGroups) {
+        std::cout << "IDX: " << std::to_string(group->getGroupID()) << " - " << group->getName() << std::endl;
+        for (core::asset::Skill *skill : skills->_skills) {
+            std::cout << "---- " << skill->getName() << std::endl;
+        }
+        std::cout << "########################" << std::endl;
     }
+    delete skills;
     
-//    std::unordered_map<int16_t,core::asset::IndexAsset*> skillsIndexTable;
-//    core::file::FileReader skillsIdxFileReader("/Users/herculesjr/Development/UltimaOnlineClient/UOFiles/skills.idx");
-//    core::parser::IndexParser skillsIdxParser(skillsIdxFileReader);
-//    core::asset::IndexAsset *skillIdx = NULL;
-//    while((skillIdx = skillsIdxParser.parse()) != NULL) {
-//        skillsIndexTable[skillIdx->getLookup()] = skillIdx;
-//    }
-//
-//    core::file::FileReader skillsFileReader("/Users/herculesjr/Development/UltimaOnlineClient/UOFiles/skills.mul");
-//    core::parser::SkillParser skillsParser(skillsFileReader);
-//    for (auto &i : skillsIndexTable) {
-//        core::asset::SkillAsset *skill = skillsParser.parse(i.first, i.second->getSize());
-//        if (skill)
-//            std::cout << "ISACTION:" << skill->isAction() << " - " << skill->getSkillName() << std::endl;
-//    }
     
+    
+    std::cout<<"Press ENTER to exit";
+    std::cin.ignore(std::cin.rdbuf()->in_avail()+1);
     return 0;
 }

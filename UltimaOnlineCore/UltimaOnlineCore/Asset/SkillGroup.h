@@ -24,10 +24,11 @@ namespace core {
             uint8_t getGroupID();
             void setGroupID(uint8_t groupID);
             void setName(const char* skillName);
+            
+            std::vector<core::asset::Skill*> skills;
         private:
             uint8_t _groupID;
             char* _name;
-            std::vector<const core::asset::Skill* const> _skills;
         };
     }
 }

@@ -22,11 +22,22 @@ namespace core {
         Skill::~Skill() {
             if (_name)
                 free(_name);
+            _group = NULL;
         }
         
         bool Skill::isAction() { return _action; }
         
         const char* Skill::getName() { return _name; }
+        
+        uint8_t Skill::getId() { return _idx; }
+        
+        const core::asset::SkillGroup* Skill::getGroup() {
+            return _group;
+        }
+        
+        void Skill::setId(uint8_t idx) {
+            _idx = idx;
+        }
         
         void Skill::setAction(bool isAction) {
             _action = isAction;
@@ -36,6 +47,10 @@ namespace core {
             if (_name)
                 free(_name);
             _name = strdup(skillName);
+        }
+        
+        void Skill::setGroup(const core::asset::SkillGroup* group) {
+            _group = group;
         }
     }
 }

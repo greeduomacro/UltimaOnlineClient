@@ -18,6 +18,20 @@ namespace core {
         public:
             FileReader(const char* path);
             
+            int8_t parseInt8();
+            uint8_t parseUInt8();
+            int16_t parseInt16();
+            uint16_t parseUInt16();
+            int32_t parseInt32();
+            uint32_t parseUInt32();
+            int64_t parseInt64();
+            uint64_t parseUInt64();
+            char* parseCStr();
+            char* parseCStrOfSize(uint32_t length);
+            char* parseByteArray(uint32_t numberOfBytes);
+            float parseFloat();
+            bool parseBool();
+            
             // Overrides
             virtual ~FileReader();
             virtual void reset();

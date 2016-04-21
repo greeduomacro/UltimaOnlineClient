@@ -22,6 +22,7 @@ namespace core {
         SkillGroup::~SkillGroup() {
             if (_name)
                 free(_name);
+            skills.clear();
         }
         
         uint8_t SkillGroup::getGroupID() { return _groupID; }

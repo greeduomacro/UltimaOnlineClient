@@ -22,13 +22,17 @@ namespace core {
             Skill(uint8_t idx, bool isAction, const char* skillName);
             bool isAction();
             const char* getName();
+            uint8_t getId();
+            const core::asset::SkillGroup* getGroup();
+            void setId(uint8_t idx);
             void setAction(bool isAction);
             void setName(const char* skillName);
+            void setGroup(const core::asset::SkillGroup* group);
         private:
             uint8_t _idx;
             bool _action;
             char* _name;
-            core::asset::SkillGroup *_group;
+            const core::asset::SkillGroup *_group;
             SkillLock _lock;
             float real;
             float value;
