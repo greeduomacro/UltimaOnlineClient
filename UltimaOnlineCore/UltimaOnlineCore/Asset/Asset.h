@@ -10,10 +10,11 @@
 #define CORE_ASSET_Asset_h
 
 #include <stdio.h>
+#include "Object.h"
 
 namespace core {
     namespace asset {
-        class Asset {
+        class Asset  : public Object {
             
         };
     }

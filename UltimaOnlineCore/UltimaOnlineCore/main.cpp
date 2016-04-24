@@ -41,7 +41,7 @@ int main(int argc, const char * argv[]) {
     
     
     
-    std::cout<<"Press ENTER to exit";
-    std::cin.ignore(std::cin.rdbuf()->in_avail()+1);
+//    std::cout<<"Press ENTER to exit";
+//    std::cin.ignore(std::cin.rdbuf()->in_avail()+1);
     return 0;
 }

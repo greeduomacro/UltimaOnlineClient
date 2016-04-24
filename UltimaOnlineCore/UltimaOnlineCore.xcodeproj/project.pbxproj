@@ -47,6 +47,8 @@
 		2F4E5C271CBABE9400BC8E04 /* Types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
 		2F4E5C281CBAD90800BC8E04 /* Skill.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Skill.cpp; sourceTree = "<group>"; };
 		2F4E5C291CBAD90800BC8E04 /* Skill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Skill.h; sourceTree = "<group>"; };
+		2F4E5C2E1CCA3D9E00BC8E04 /* SkillName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkillName.h; sourceTree = "<group>"; };
+		2F4E5C3F1CCA886B00BC8E04 /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
 		2FDB1D2C1C4A690800565F94 /* UltimaOnlineCore */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = UltimaOnlineCore; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FDB1D2F1C4A690800565F94 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,7 +67,9 @@
 		04C5CDF71CC7E66000D0BD13 /* Types */ = {
 			isa = PBXGroup;
 			children = (
+				2F4E5C3F1CCA886B00BC8E04 /* Object.h */,
 				04C5CDF61CC7E65A00D0BD13 /* SkillLock.h */,
+				2F4E5C2E1CCA3D9E00BC8E04 /* SkillName.h */,
 			);
 			name = Types;
 			sourceTree = "<group>";
@@ -88,9 +92,8 @@
 		2F4E5C0C1CB93F1000BC8E04 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				2F4E5C381CCA881800BC8E04 /* Systems */,
 				04C5CDF71CC7E66000D0BD13 /* Types */,
-				2F4E5C201CBAB85900BC8E04 /* Asset */,
-				2F4E5C0A1CB9377700BC8E04 /* File */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -108,6 +111,55 @@
 				044D8A741CC7F71D0085AF5B /* Skills.h */,
 			);
 			path = Asset;
+			sourceTree = "<group>";
+		};
+		2F4E5C2F1CCA4A2B00BC8E04 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		2F4E5C381CCA881800BC8E04 /* Systems */ = {
+			isa = PBXGroup;
+			children = (
+				2F4E5C451CCA8AEC00BC8E04 /* Logging */,
+				2F4E5C441CCA8AE300BC8E04 /* Console */,
+				2F4E5C431CCA8AD400BC8E04 /* CoreManager */,
+				2F4E5C391CCA883800BC8E04 /* Message */,
+				2F4E5C201CBAB85900BC8E04 /* Asset */,
+				2F4E5C0A1CB9377700BC8E04 /* File */,
+				2F4E5C2F1CCA4A2B00BC8E04 /* Network */,
+			);
+			name = Systems;
+			sourceTree = "<group>";
+		};
+		2F4E5C391CCA883800BC8E04 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Message;
+			sourceTree = "<group>";
+		};
+		2F4E5C431CCA8AD400BC8E04 /* CoreManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CoreManager;
+			sourceTree = "<group>";
+		};
+		2F4E5C441CCA8AE300BC8E04 /* Console */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Console;
+			sourceTree = "<group>";
+		};
+		2F4E5C451CCA8AEC00BC8E04 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Logging;
 			sourceTree = "<group>";
 		};
 		2FDB1D231C4A690800565F94 = {
