@@ -8,39 +8,18 @@
 
 #include <iostream>
 #include <unordered_map>
-#include "Types.h"
-#include "FileManager/FileManager.h"
-#include "FileManager/FileReader.h"
-#include "Asset/Skills.h"
+#include "core/network/NetworkManager.h"
+#include "core/network/packet/LoginRequestPacket.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
     
-    //skills.idx
-    //skills.mul
-    
-//    core::file::FileManager &fileManager = core::file::FileManager::getInstance();
-//    std::vector<std::string> myVector;
-//    int files = fileManager.listFiles("/Users/herculesjr/Development/UltimaOnlineClient/UOFiles", &myVector, true);
-//    std::cout << files << std::endl;
-//    for (auto &i : myVector) {
-//        std::cout << i << std::endl;
-//    }
-    
-    core::asset::Skills *skills = new core::asset::Skills();
-    
-    for (core::asset::SkillGroup *group : skills->_skillGroups) {
-        std::cout << "IDX: " << std::to_string(group->getGroupID()) << " - " << group->getName() << std::endl;
-        for (core::asset::Skill *skill : skills->_skills) {
-            std::cout << "---- " << skill->getName() << std::endl;
-        }
-        std::cout << "########################" << std::endl;
+    core::network::NetworkManager &networkManager = core::network::NetworkManager::getInstance();
+    if (networkManager.connect("server.chaosage.com.br", 5003)) {
+        core::network::packet::LoginRequestPacket loginRequest("malckav", "UJuTyLEmaZU");
+        networkManager.send(loginRequest);
     }
-    delete skills;
-    
-    
-    
 //    std::cout<<"Press ENTER to exit";
 //    std::cin.ignore(std::cin.rdbuf()->in_avail()+1);
     return 0;

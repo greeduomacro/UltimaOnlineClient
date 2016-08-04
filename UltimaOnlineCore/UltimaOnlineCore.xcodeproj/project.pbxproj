@@ -7,13 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		044D8A761CC7F71D0085AF5B /* Skills.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 044D8A751CC7F71D0085AF5B /* Skills.cpp */; };
-		04C5CDFA1CC7E8C300D0BD13 /* SkillGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04C5CDF81CC7E8C300D0BD13 /* SkillGroup.cpp */; };
-		2F4E5C0E1CB94B8000BC8E04 /* FileManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E5C0D1CB94B8000BC8E04 /* FileManager.cpp */; };
-		2F4E5C111CB94CA000BC8E04 /* File.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E5C0F1CB94CA000BC8E04 /* File.cpp */; };
-		2F4E5C141CBA7C6200BC8E04 /* FileReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E5C121CBA7C6200BC8E04 /* FileReader.cpp */; };
-		2F4E5C231CBAB88000BC8E04 /* Asset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E5C211CBAB88000BC8E04 /* Asset.cpp */; };
-		2F4E5C2A1CBAD90800BC8E04 /* Skill.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E5C281CBAD90800BC8E04 /* Skill.cpp */; };
+		2F5D7EC81D52970B00B2269C /* NetworkManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F5D7EC61D52970B00B2269C /* NetworkManager.cpp */; };
+		2F5D7ED51D52A17500B2269C /* Packet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F5D7ED31D52A17500B2269C /* Packet.cpp */; };
+		2F5D7ED91D52B3C100B2269C /* LoginRequestPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F5D7ED71D52B3C100B2269C /* LoginRequestPacket.cpp */; };
 		2FDB1D301C4A690800565F94 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FDB1D2F1C4A690800565F94 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -30,25 +26,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		044D8A741CC7F71D0085AF5B /* Skills.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Skills.h; sourceTree = "<group>"; };
-		044D8A751CC7F71D0085AF5B /* Skills.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Skills.cpp; sourceTree = "<group>"; };
 		04C5CDF61CC7E65A00D0BD13 /* SkillLock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkillLock.h; sourceTree = "<group>"; };
-		04C5CDF81CC7E8C300D0BD13 /* SkillGroup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkillGroup.cpp; sourceTree = "<group>"; };
-		04C5CDF91CC7E8C300D0BD13 /* SkillGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillGroup.h; sourceTree = "<group>"; };
-		2F4E5C0B1CB93B9500BC8E04 /* FileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
-		2F4E5C0D1CB94B8000BC8E04 /* FileManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileManager.cpp; sourceTree = "<group>"; };
-		2F4E5C0F1CB94CA000BC8E04 /* File.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = File.cpp; sourceTree = "<group>"; };
-		2F4E5C101CB94CA000BC8E04 /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = File.h; sourceTree = "<group>"; };
-		2F4E5C121CBA7C6200BC8E04 /* FileReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileReader.cpp; sourceTree = "<group>"; };
-		2F4E5C131CBA7C6200BC8E04 /* FileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileReader.h; sourceTree = "<group>"; };
-		2F4E5C151CBA7D4300BC8E04 /* Types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
-		2F4E5C211CBAB88000BC8E04 /* Asset.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Asset.cpp; sourceTree = "<group>"; };
-		2F4E5C221CBAB88000BC8E04 /* Asset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Asset.h; sourceTree = "<group>"; };
-		2F4E5C271CBABE9400BC8E04 /* Types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
-		2F4E5C281CBAD90800BC8E04 /* Skill.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Skill.cpp; sourceTree = "<group>"; };
-		2F4E5C291CBAD90800BC8E04 /* Skill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Skill.h; sourceTree = "<group>"; };
 		2F4E5C2E1CCA3D9E00BC8E04 /* SkillName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkillName.h; sourceTree = "<group>"; };
 		2F4E5C3F1CCA886B00BC8E04 /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
+		2F5D7EC61D52970B00B2269C /* NetworkManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetworkManager.cpp; sourceTree = "<group>"; };
+		2F5D7EC71D52970B00B2269C /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		2F5D7ECA1D529E4D00B2269C /* easylogging++.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "easylogging++.h"; sourceTree = "<group>"; };
+		2F5D7ED31D52A17500B2269C /* Packet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Packet.cpp; sourceTree = "<group>"; };
+		2F5D7ED41D52A17500B2269C /* Packet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Packet.h; sourceTree = "<group>"; };
+		2F5D7ED71D52B3C100B2269C /* LoginRequestPacket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LoginRequestPacket.cpp; sourceTree = "<group>"; };
+		2F5D7ED81D52B3C100B2269C /* LoginRequestPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRequestPacket.h; sourceTree = "<group>"; };
 		2FDB1D2C1C4A690800565F94 /* UltimaOnlineCore */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = UltimaOnlineCore; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FDB1D2F1C4A690800565F94 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,92 +61,45 @@
 			name = Types;
 			sourceTree = "<group>";
 		};
-		2F4E5C0A1CB9377700BC8E04 /* File */ = {
-			isa = PBXGroup;
-			children = (
-				2F4E5C0F1CB94CA000BC8E04 /* File.cpp */,
-				2F4E5C101CB94CA000BC8E04 /* File.h */,
-				2F4E5C0D1CB94B8000BC8E04 /* FileManager.cpp */,
-				2F4E5C0B1CB93B9500BC8E04 /* FileManager.h */,
-				2F4E5C121CBA7C6200BC8E04 /* FileReader.cpp */,
-				2F4E5C131CBA7C6200BC8E04 /* FileReader.h */,
-				2F4E5C151CBA7D4300BC8E04 /* Types.h */,
-			);
-			name = File;
-			path = FileManager;
-			sourceTree = "<group>";
-		};
 		2F4E5C0C1CB93F1000BC8E04 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				2F4E5C381CCA881800BC8E04 /* Systems */,
+				2F5D7EC51D5296B700B2269C /* Network */,
 				04C5CDF71CC7E66000D0BD13 /* Types */,
 			);
 			name = Core;
+			path = core;
 			sourceTree = "<group>";
 		};
-		2F4E5C201CBAB85900BC8E04 /* Asset */ = {
+		2F5D7EC51D5296B700B2269C /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				2F4E5C211CBAB88000BC8E04 /* Asset.cpp */,
-				2F4E5C221CBAB88000BC8E04 /* Asset.h */,
-				2F4E5C281CBAD90800BC8E04 /* Skill.cpp */,
-				2F4E5C291CBAD90800BC8E04 /* Skill.h */,
-				04C5CDF81CC7E8C300D0BD13 /* SkillGroup.cpp */,
-				04C5CDF91CC7E8C300D0BD13 /* SkillGroup.h */,
-				044D8A751CC7F71D0085AF5B /* Skills.cpp */,
-				044D8A741CC7F71D0085AF5B /* Skills.h */,
-			);
-			path = Asset;
-			sourceTree = "<group>";
-		};
-		2F4E5C2F1CCA4A2B00BC8E04 /* Network */ = {
-			isa = PBXGroup;
-			children = (
+				2F5D7ED61D52B36B00B2269C /* Packet */,
+				2F5D7EC61D52970B00B2269C /* NetworkManager.cpp */,
+				2F5D7EC71D52970B00B2269C /* NetworkManager.h */,
 			);
 			name = Network;
+			path = network;
 			sourceTree = "<group>";
 		};
-		2F4E5C381CCA881800BC8E04 /* Systems */ = {
+		2F5D7EC91D529E2600B2269C /* 3rdparty */ = {
 			isa = PBXGroup;
 			children = (
-				2F4E5C451CCA8AEC00BC8E04 /* Logging */,
-				2F4E5C441CCA8AE300BC8E04 /* Console */,
-				2F4E5C431CCA8AD400BC8E04 /* CoreManager */,
-				2F4E5C391CCA883800BC8E04 /* Message */,
-				2F4E5C201CBAB85900BC8E04 /* Asset */,
-				2F4E5C0A1CB9377700BC8E04 /* File */,
-				2F4E5C2F1CCA4A2B00BC8E04 /* Network */,
+				2F5D7ECA1D529E4D00B2269C /* easylogging++.h */,
 			);
-			name = Systems;
+			path = 3rdparty;
 			sourceTree = "<group>";
 		};
-		2F4E5C391CCA883800BC8E04 /* Message */ = {
+		2F5D7ED61D52B36B00B2269C /* Packet */ = {
 			isa = PBXGroup;
 			children = (
+				2F5D7ED31D52A17500B2269C /* Packet.cpp */,
+				2F5D7ED41D52A17500B2269C /* Packet.h */,
+				2F5D7ED71D52B3C100B2269C /* LoginRequestPacket.cpp */,
+				2F5D7ED81D52B3C100B2269C /* LoginRequestPacket.h */,
 			);
-			name = Message;
-			sourceTree = "<group>";
-		};
-		2F4E5C431CCA8AD400BC8E04 /* CoreManager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = CoreManager;
-			sourceTree = "<group>";
-		};
-		2F4E5C441CCA8AE300BC8E04 /* Console */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Console;
-			sourceTree = "<group>";
-		};
-		2F4E5C451CCA8AEC00BC8E04 /* Logging */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Logging;
+			name = Packet;
+			path = packet;
 			sourceTree = "<group>";
 		};
 		2FDB1D231C4A690800565F94 = {
@@ -181,8 +121,8 @@
 		2FDB1D2E1C4A690800565F94 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				2F5D7EC91D529E2600B2269C /* 3rdparty */,
 				2FDB1D2F1C4A690800565F94 /* main.cpp */,
-				2F4E5C271CBABE9400BC8E04 /* Types.h */,
 				2F4E5C0C1CB93F1000BC8E04 /* Core */,
 			);
 			name = Source;
@@ -245,14 +185,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04C5CDFA1CC7E8C300D0BD13 /* SkillGroup.cpp in Sources */,
-				2F4E5C111CB94CA000BC8E04 /* File.cpp in Sources */,
+				2F5D7EC81D52970B00B2269C /* NetworkManager.cpp in Sources */,
+				2F5D7ED91D52B3C100B2269C /* LoginRequestPacket.cpp in Sources */,
 				2FDB1D301C4A690800565F94 /* main.cpp in Sources */,
-				2F4E5C2A1CBAD90800BC8E04 /* Skill.cpp in Sources */,
-				2F4E5C231CBAB88000BC8E04 /* Asset.cpp in Sources */,
-				2F4E5C141CBA7C6200BC8E04 /* FileReader.cpp in Sources */,
-				2F4E5C0E1CB94B8000BC8E04 /* FileManager.cpp in Sources */,
-				044D8A761CC7F71D0085AF5B /* Skills.cpp in Sources */,
+				2F5D7ED51D52A17500B2269C /* Packet.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
