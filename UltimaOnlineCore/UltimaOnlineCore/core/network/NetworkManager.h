@@ -10,6 +10,7 @@
 #define CORE_NETWORK_NETWORKMANAGER_H
 
 #include "packet/Packet.h"
+#include "NetworkAdapter.h"
 
 namespace core {
     namespace network {
@@ -26,6 +27,9 @@ namespace core {
         private:
             NetworkManager();
             ~NetworkManager();
+            
+            NetworkAdapter *_adapter;
+
         };
     }
 }

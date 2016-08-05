@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <unordered_map>
+#include <CoreFoundation/CoreFoundation.h>
 #include "core/network/NetworkManager.h"
 #include "core/network/packet/LoginRequestPacket.h"
 
@@ -20,6 +21,7 @@ int main(int argc, const char * argv[]) {
         core::network::packet::LoginRequestPacket loginRequest("malckav", "UJuTyLEmaZU");
         networkManager.send(loginRequest);
     }
+    CFRunLoopRun();
 //    std::cout<<"Press ENTER to exit";
 //    std::cin.ignore(std::cin.rdbuf()->in_avail()+1);
     return 0;

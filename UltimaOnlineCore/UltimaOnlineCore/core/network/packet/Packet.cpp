@@ -9,6 +9,7 @@
 #include "Packet.h"
 #include <limits>
 #include <stdlib.h>
+#include <string.h>
 
 using namespace core::network::packet;
 
@@ -16,9 +17,6 @@ Packet::Packet(unsigned char packetID, unsigned short length) {
     _packetID = packetID;
     _length = length;
     _packetData = nullptr;
-    if (_length > 0 && _length < std::numeric_limits<typeof(length)>::max()) {
-        this->createPacketData();
-    }
 }
 
 void Packet::createPacketData() {
@@ -26,7 +24,6 @@ void Packet::createPacketData() {
         free(_packetData);
     }
     _packetData = (unsigned char*)calloc(1, _length * sizeof(unsigned char));
-    _packetData[0] = _packetID;
 }
 
 Packet::~Packet() {
@@ -37,6 +34,20 @@ Packet::~Packet() {
 
 unsigned char* Packet::getData() {
     return _packetData;
+}
+
+unsigned short Packet::getLength() {
+    return _length;
+}
+void Packet::setLength(unsigned short length) {
+    _length = length;
+}
+
+void Packet::buildPacket() {
+    if (_length > 0 && _length < std::numeric_limits<typeof(_length)>::max()) {
+        this->createPacketData();
+    }
+    _packetData[0] = _packetID;
 }
 
 int Packet::unicodeToAscii(const char *unicodeText, int Len, char *asciiText)
@@ -56,18 +67,21 @@ int Packet::unicodeToAscii(const char *unicodeText, int Len, char *asciiText)
     return nonAsciiCompatible;
 }
 
-unsigned int Packet::unpack32(const unsigned char *data)
+unsigned int Packet::unpack32(unsigned int idx)
 {
+    unsigned char *data = _packetData+idx;
     return (data[0] << 24) | (data[1] << 16) | (data[2] << 8) | data[3];
 }
 
-unsigned short Packet::unpack16(const unsigned char *data)
+unsigned short Packet::unpack16(unsigned int idx)
 {
+    unsigned char *data = _packetData+idx;
     return (data[0] << 8) | data[1];
 }
 
-void Packet::pack32(unsigned char *data, unsigned int x)
+void Packet::pack32(unsigned int idx, unsigned int x)
 {
+    unsigned char *data = _packetData+idx;
     data[0] = (unsigned char)(x >> 24);
     data[1] = (unsigned char)((x >> 16) & 0xff);
     data[2] = (unsigned char)((x >> 8) & 0xff);
@@ -76,10 +90,22 @@ void Packet::pack32(unsigned char *data, unsigned int x)
     return;
 }
 
-void Packet::pack16(unsigned char *data, unsigned short x)
+void Packet::pack16(unsigned int idx, unsigned short x)
 {
+    unsigned char *data = _packetData+idx;
     data[0] = x >> 8;
     data[1] = x & 0xff;
     
     return;
+}
+
+void Packet::pack8(unsigned int idx, unsigned char x)
+{
+    unsigned char *data = _packetData+idx;
+    data[0] = x;
+    return;
+}
+
+void Packet::packCStr(unsigned int idx, const char *data) {
+    strcpy((char*)_packetData+idx, data);
 }

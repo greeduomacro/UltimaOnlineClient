@@ -9,8 +9,6 @@
 #ifndef CORE_NETWORK_PACKET_PACKET_H
 #define CORE_NETWORK_PACKET_PACKET_H
 
-#include <stack>
-
 namespace core {
     namespace network {
         namespace packet {
@@ -19,6 +17,7 @@ namespace core {
             public:
                 Packet(unsigned char packetID, unsigned short length);
                 virtual ~Packet();
+                virtual void buildPacket();
                 
                 unsigned char getPacketID();
                 void setPacketID(unsigned char packetID);
@@ -28,10 +27,14 @@ namespace core {
                 
                 unsigned char* getData();
                 
-                void pack16(unsigned char *Buf, unsigned short x);
-                void pack32(unsigned char *Buf, unsigned int x);
-                unsigned short unpack16(const unsigned char *data);
-                unsigned int unpack32(const unsigned char *data);
+                void pack8(unsigned int idx, unsigned char x);
+                void pack16(unsigned int idx, unsigned short x);
+                void pack32(unsigned int idx, unsigned int x);
+                void packCStr(unsigned int idx, const char *data);
+                unsigned char unpack8(unsigned int idx);
+                unsigned short unpack16(unsigned int idx);
+                unsigned int unpack32(unsigned int idx);
+                const char* unpackCStr(unsigned int idx);
                 int unicodeToAscii(const char *unicodeText, int len, char *asciiText);
                 
             protected:

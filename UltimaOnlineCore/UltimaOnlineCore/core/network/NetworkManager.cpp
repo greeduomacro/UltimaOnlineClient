@@ -7,17 +7,18 @@
 //
 
 #include "NetworkManager.h"
+#import <CoreFoundation/CoreFoundation.h>
 
 #include "easylogging++.h"
 
 INITIALIZE_EASYLOGGINGPP
 
 core::network::NetworkManager::NetworkManager() {
-    //init NetworkManager
+    _adapter = NetworkAdapter::createNetworkAdapter();
 }
 
 core::network::NetworkManager::~NetworkManager() {
-    
+    delete _adapter;
 }
 
 core::network::NetworkManager& core::network::NetworkManager::getInstance() {
@@ -28,9 +29,12 @@ core::network::NetworkManager& core::network::NetworkManager::getInstance() {
 
 bool core::network::NetworkManager::connect(const char* host, int port) {
     LOG(INFO) << "Connecting...";
+    _adapter->connect(host, port);
     return true;
 }
 
 bool core::network::NetworkManager::send(core::network::packet::Packet& packet) {
+    packet.buildPacket();
+    _adapter->send(packet.getData(), packet.getLength());
     return true;
 }

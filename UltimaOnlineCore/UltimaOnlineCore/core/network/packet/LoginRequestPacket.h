@@ -19,9 +19,17 @@ namespace core {
                 LoginRequestPacket(const char *login, const char *password);
                 ~LoginRequestPacket();
                 
+                const char* getLogin();
+                void setLogin(const char* login);
+                
+                const char* getPassword();
+                void setPassword(const char* password);
+                
+                virtual void buildPacket();
+                
             private:
                 char *_login;
-                char *password;
+                char *_password;
             };
         }
     }
