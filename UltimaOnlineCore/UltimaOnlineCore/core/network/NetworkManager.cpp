@@ -14,11 +14,10 @@
 INITIALIZE_EASYLOGGINGPP
 
 core::network::NetworkManager::NetworkManager() {
-    _adapter = NetworkAdapter::createNetworkAdapter();
+    _adapter = NetworkAdapter::getInstance();
 }
 
 core::network::NetworkManager::~NetworkManager() {
-    delete _adapter;
 }
 
 core::network::NetworkManager& core::network::NetworkManager::getInstance() {
@@ -28,7 +27,7 @@ core::network::NetworkManager& core::network::NetworkManager::getInstance() {
 }
 
 bool core::network::NetworkManager::connect(const char* host, int port) {
-    LOG(INFO) << "Connecting...";
+    _adapter->clean();
     _adapter->connect(host, port);
     return true;
 }

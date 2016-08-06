@@ -8,15 +8,27 @@
 
 #include "NetworkAdapteriOS.h"
 #include "easylogging++.h"
+#include "LoginRequestPacket.h"
+#include "NetworkManager.h"
 
-static void readCallBack(CFReadStreamRef stream, CFStreamEventType event, void *info)
-{
+static CFReadStreamRef *readStream;
+static CFWriteStreamRef *writeStream;
+
+static void readCallBack(CFReadStreamRef stream, CFStreamEventType event, void *info) {
     switch(event) {
-        case kCFStreamEventOpenCompleted:
-            LOG(INFO) << "OPEN...";
-        case kCFStreamEventHasBytesAvailable:
-            LOG(INFO) << "HAS BYTES...";
+        case kCFStreamEventOpenCompleted: {
+            ((core::platforms::NetworkAdapteriOS*)core::network::NetworkAdapter::getInstance())->setReadStreamOpened(true);
             break;
+        }
+        case kCFStreamEventHasBytesAvailable: {
+            unsigned char buf[NETWORK_BUFSIZE];
+            int len = (int)CFReadStreamRead(stream, buf, NETWORK_BUFSIZE);
+            while (len > 0) {
+                core::network::NetworkAdapter::getInstance()->parsePacket(buf, len);
+                len = (int)CFReadStreamRead(stream, buf, NETWORK_BUFSIZE);
+            }
+            break;
+        }
         case kCFStreamEventErrorOccurred:
             NSLog(@"A Read Stream Error Has Occurred!");
             break;
@@ -28,14 +40,14 @@ static void readCallBack(CFReadStreamRef stream, CFStreamEventType event, void *
     }
 }
 
-static void writeCallBack(CFWriteStreamRef stream, CFStreamEventType event, void *info)
-{
+static void writeCallBack(CFWriteStreamRef stream, CFStreamEventType event, void *info) {
     switch(event) {
         case kCFStreamEventOpenCompleted:
-            LOG(INFO) << "OPEN...";
-        case kCFStreamEventCanAcceptBytes:
-            LOG(INFO) << "WRITE BYTES...";
+            ((core::platforms::NetworkAdapteriOS*)core::network::NetworkAdapter::getInstance())->setWriteStreamOpened(true);
             break;
+        case kCFStreamEventCanAcceptBytes: {
+            break;
+        }
         case kCFStreamEventErrorOccurred:
             NSLog(@"A Read Stream Error Has Occurred!");
             break;
@@ -48,11 +60,11 @@ static void writeCallBack(CFWriteStreamRef stream, CFStreamEventType event, void
 }
 
 core::platforms::NetworkAdapteriOS::NetworkAdapteriOS() {
-    
 }
 
 bool core::platforms::NetworkAdapteriOS::connect(const char* host, unsigned int port) {
     
+    networkQueue = dispatch_queue_create("network", DISPATCH_QUEUE_SERIAL);
     CFStreamCreatePairWithSocketToHost(NULL, (__bridge CFStringRef)[NSString stringWithUTF8String:host], port, &_readStream, &_writeStream);
     
     CFStreamClientContext readContext = {
@@ -77,7 +89,7 @@ bool core::platforms::NetworkAdapteriOS::connect(const char* host, unsigned int 
     
     
     if(CFReadStreamSetClient(_readStream, readEvents, readCallBack, &readContext)) {
-        CFReadStreamScheduleWithRunLoop(_readStream, CFRunLoopGetCurrent(), kCFRunLoopCommonModes);
+        CFReadStreamSetDispatchQueue(_readStream, networkQueue);
     }
     
     if (!CFReadStreamOpen(_readStream)) {
@@ -86,15 +98,46 @@ bool core::platforms::NetworkAdapteriOS::connect(const char* host, unsigned int 
     }
     
     CFWriteStreamSetClient(_writeStream, writeEvents, writeCallBack, &writeContext);
-    CFWriteStreamScheduleWithRunLoop(_writeStream, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
+    CFWriteStreamSetDispatchQueue(_writeStream, networkQueue);
     if (!CFWriteStreamOpen(_writeStream)) {
-        NSLog(@"A Read Stream Event End!");
+        NSLog(@"A Write Stream Event End!");
     }
+    
+    writeStream = &_writeStream;
+    readStream = &_readStream;
+    
+    std::unique_lock<std::mutex> lck(mtx);
+    while(!_readStreamOpened && !_writeStreamOpened) { cv.wait(lck); }
+    
+    _connected = true;
+    
     return true;
 }
 
 bool core::platforms::NetworkAdapteriOS::send(const unsigned char* bytes, unsigned int length) {
-    return CFWriteStreamWrite(_writeStream, bytes, length) != -1;
+    dispatch_sync(networkQueue, ^{
+        this->logPacket(bytes, length);
+        CFWriteStreamWrite(_writeStream, bytes, length);
+    });
+    return true;
+}
+
+void core::platforms::NetworkAdapteriOS::setReadStreamOpened(bool isOpen) {
+    _readStreamOpened = isOpen;
+    cv.notify_all();
+}
+
+bool core::platforms::NetworkAdapteriOS::getReadStreamOpened() {
+    return _readStreamOpened;
+}
+
+void core::platforms::NetworkAdapteriOS::setWriteStreamOpened(bool isOpen) {
+    _writeStreamOpened = isOpen;
+    cv.notify_all();
+}
+
+bool core::platforms::NetworkAdapteriOS::getWriteStreamOpened() {
+    return _writeStreamOpened;
 }
 
 

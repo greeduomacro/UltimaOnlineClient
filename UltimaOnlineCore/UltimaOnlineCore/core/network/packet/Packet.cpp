@@ -43,11 +43,13 @@ void Packet::setLength(unsigned short length) {
     _length = length;
 }
 
-void Packet::buildPacket() {
+void Packet::initPacket(bool fillCmd) {
     if (_length > 0 && _length < std::numeric_limits<typeof(_length)>::max()) {
         this->createPacketData();
     }
-    _packetData[0] = _packetID;
+    if (fillCmd) {
+        _packetData[0] = _packetID;
+    }
 }
 
 int Packet::unicodeToAscii(const char *unicodeText, int Len, char *asciiText)

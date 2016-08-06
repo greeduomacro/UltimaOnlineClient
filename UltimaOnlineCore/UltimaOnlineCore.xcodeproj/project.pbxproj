@@ -12,6 +12,8 @@
 		2F5D7ED91D52B3C100B2269C /* LoginRequestPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F5D7ED71D52B3C100B2269C /* LoginRequestPacket.cpp */; };
 		2F5D7EE21D53D70400B2269C /* NetworkAdapteriOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2F5D7EE01D53D70400B2269C /* NetworkAdapteriOS.mm */; };
 		2F5D7EE41D53FCBA00B2269C /* NetworkAdapter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F5D7EE31D53FCBA00B2269C /* NetworkAdapter.cpp */; };
+		2F5D7EE91D54F9F800B2269C /* UOHuffman.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F5D7EE61D54C85A00B2269C /* UOHuffman.cpp */; };
+		2F5D7EEC1D5659F000B2269C /* LoginSeedPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F5D7EEA1D5659F000B2269C /* LoginSeedPacket.cpp */; };
 		2FDB1D301C4A690800565F94 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2FDB1D2F1C4A690800565F94 /* main.mm */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,10 @@
 		2F5D7EE01D53D70400B2269C /* NetworkAdapteriOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NetworkAdapteriOS.mm; sourceTree = "<group>"; };
 		2F5D7EE11D53D70400B2269C /* NetworkAdapteriOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkAdapteriOS.h; sourceTree = "<group>"; };
 		2F5D7EE31D53FCBA00B2269C /* NetworkAdapter.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; path = NetworkAdapter.cpp; sourceTree = "<group>"; };
+		2F5D7EE61D54C85A00B2269C /* UOHuffman.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UOHuffman.cpp; sourceTree = "<group>"; };
+		2F5D7EE71D54C85A00B2269C /* UOHuffman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UOHuffman.h; sourceTree = "<group>"; };
+		2F5D7EEA1D5659F000B2269C /* LoginSeedPacket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LoginSeedPacket.cpp; sourceTree = "<group>"; };
+		2F5D7EEB1D5659F000B2269C /* LoginSeedPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginSeedPacket.h; sourceTree = "<group>"; };
 		2FDB1D2C1C4A690800565F94 /* UltimaOnlineCore */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = UltimaOnlineCore; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FDB1D2F1C4A690800565F94 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,6 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				2F5D7ECA1D529E4D00B2269C /* easylogging++.h */,
+				2F5D7EE61D54C85A00B2269C /* UOHuffman.cpp */,
+				2F5D7EE71D54C85A00B2269C /* UOHuffman.h */,
 			);
 			path = 3rdparty;
 			sourceTree = "<group>";
@@ -105,6 +113,8 @@
 			children = (
 				2F5D7ED31D52A17500B2269C /* Packet.cpp */,
 				2F5D7ED41D52A17500B2269C /* Packet.h */,
+				2F5D7EEA1D5659F000B2269C /* LoginSeedPacket.cpp */,
+				2F5D7EEB1D5659F000B2269C /* LoginSeedPacket.h */,
 				2F5D7ED71D52B3C100B2269C /* LoginRequestPacket.cpp */,
 				2F5D7ED81D52B3C100B2269C /* LoginRequestPacket.h */,
 			);
@@ -236,9 +246,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F5D7EEC1D5659F000B2269C /* LoginSeedPacket.cpp in Sources */,
 				2F5D7EC81D52970B00B2269C /* NetworkManager.cpp in Sources */,
 				2F5D7ED91D52B3C100B2269C /* LoginRequestPacket.cpp in Sources */,
 				2FDB1D301C4A690800565F94 /* main.mm in Sources */,
+				2F5D7EE91D54F9F800B2269C /* UOHuffman.cpp in Sources */,
 				2F5D7ED51D52A17500B2269C /* Packet.cpp in Sources */,
 				2F5D7EE41D53FCBA00B2269C /* NetworkAdapter.cpp in Sources */,
 				2F5D7EE21D53D70400B2269C /* NetworkAdapteriOS.mm in Sources */,

@@ -25,7 +25,7 @@ LoginRequestPacket::~LoginRequestPacket() {
 }
 
 void LoginRequestPacket::buildPacket() {
-    Packet::buildPacket();
+    Packet::initPacket();
     this->packCStr(1, _login);
     this->packCStr(31, _password);
     this->pack8(61, 0xFF);

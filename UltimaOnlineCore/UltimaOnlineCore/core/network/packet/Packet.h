@@ -17,7 +17,9 @@ namespace core {
             public:
                 Packet(unsigned char packetID, unsigned short length);
                 virtual ~Packet();
-                virtual void buildPacket();
+                virtual void initPacket(bool fillCmd = true);
+                
+                virtual void buildPacket() = 0;
                 
                 unsigned char getPacketID();
                 void setPacketID(unsigned char packetID);
