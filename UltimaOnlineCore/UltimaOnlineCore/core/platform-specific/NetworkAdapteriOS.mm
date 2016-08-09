@@ -116,7 +116,6 @@ bool core::platforms::NetworkAdapteriOS::connect(const char* host, unsigned int 
 
 bool core::platforms::NetworkAdapteriOS::send(const unsigned char* bytes, unsigned int length) {
     dispatch_sync(networkQueue, ^{
-        this->logPacket(bytes, length);
         CFWriteStreamWrite(_writeStream, bytes, length);
     });
     return true;

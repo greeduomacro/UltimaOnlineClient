@@ -11,15 +11,24 @@
 
 #include "packet/Packet.h"
 #include "NetworkAdapter.h"
+#include <map>
+#include <vector>
+#include "packet/PacketHandler.h"
 
 namespace core {
     namespace network {
         class NetworkManager {
         public:
+            enum HandlerQueue {
+                AfterSystem = 0, /* DEFAULT */
+                System = 1,
+                BeforeSystem = 2,
+            };
             static NetworkManager& getInstance();
             
             bool connect(const char* host, int port);
             bool send(core::network::packet::Packet& packet);
+            bool registerPacketHandler(HandlerQueue queue, unsigned char packetID, core::network::packet::IPacketHandler &packetHandler);
             
             NetworkManager(NetworkManager const&) = delete;
             void operator=(NetworkManager const&) = delete;
@@ -29,6 +38,11 @@ namespace core {
             ~NetworkManager();
             
             NetworkAdapter *_adapter;
+            
+            typedef std::vector<core::network::packet::IPacketHandler*> PacketHandlerList;
+            std::map<unsigned char, PacketHandlerList> _beforeSystemPacketHandlers;
+            std::map<unsigned char, PacketHandlerList> _systemPacketHandlers;
+            std::map<unsigned char, PacketHandlerList> _afterSystemPacketHandlers;
 
         };
     }

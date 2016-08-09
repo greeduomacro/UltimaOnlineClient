@@ -34,6 +34,25 @@ bool core::network::NetworkManager::connect(const char* host, int port) {
 
 bool core::network::NetworkManager::send(core::network::packet::Packet& packet) {
     packet.buildPacket();
+    _adapter->logPacket(packet.getData(), packet.getLength());
     _adapter->send(packet.getData(), packet.getLength());
+    return true;
+}
+
+bool core::network::NetworkManager::registerPacketHandler(HandlerQueue queue, unsigned char packetID, core::network::packet::IPacketHandler &packetHandler) {
+    PacketHandlerList &handlers = _afterSystemPacketHandlers[packetID];
+    switch (queue) {
+        case HandlerQueue::AfterSystem:
+            handlers = _afterSystemPacketHandlers[packetID];
+            break;
+        case HandlerQueue::System:
+            handlers = _systemPacketHandlers[packetID];
+            break;
+        case HandlerQueue::BeforeSystem:
+            handlers = _beforeSystemPacketHandlers[packetID];
+            break;
+    }
+    handlers.push_back(&packetHandler);
+    packetHandler.setHandlerRegisterList(handlers);
     return true;
 }

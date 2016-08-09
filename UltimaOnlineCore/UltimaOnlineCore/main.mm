@@ -25,7 +25,6 @@ int main(int argc, const char * argv[]) {
         networkManager.send(loginRequest);
     }
 //    CFRunLoopRun();
-    std::cout<<"Press ENTER to exit";
     std::cin.ignore(std::cin.rdbuf()->in_avail()+1);
     return 0;
 }

@@ -14,6 +14,9 @@
 		2F5D7EE41D53FCBA00B2269C /* NetworkAdapter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F5D7EE31D53FCBA00B2269C /* NetworkAdapter.cpp */; };
 		2F5D7EE91D54F9F800B2269C /* UOHuffman.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F5D7EE61D54C85A00B2269C /* UOHuffman.cpp */; };
 		2F5D7EEC1D5659F000B2269C /* LoginSeedPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F5D7EEA1D5659F000B2269C /* LoginSeedPacket.cpp */; };
+		2F5D7EF11D58095B00B2269C /* LoginDeniedPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F5D7EEF1D58095B00B2269C /* LoginDeniedPacket.cpp */; };
+		2F5D7EF41D580EDA00B2269C /* GameServerListPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F5D7EF21D580EDA00B2269C /* GameServerListPacket.cpp */; };
+		2F5D7EF71D5A7AA400B2269C /* PacketHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F5D7EF51D5A7AA400B2269C /* PacketHandler.cpp */; };
 		2FDB1D301C4A690800565F94 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2FDB1D2F1C4A690800565F94 /* main.mm */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +51,13 @@
 		2F5D7EE71D54C85A00B2269C /* UOHuffman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UOHuffman.h; sourceTree = "<group>"; };
 		2F5D7EEA1D5659F000B2269C /* LoginSeedPacket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LoginSeedPacket.cpp; sourceTree = "<group>"; };
 		2F5D7EEB1D5659F000B2269C /* LoginSeedPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginSeedPacket.h; sourceTree = "<group>"; };
+		2F5D7EEF1D58095B00B2269C /* LoginDeniedPacket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LoginDeniedPacket.cpp; sourceTree = "<group>"; };
+		2F5D7EF01D58095B00B2269C /* LoginDeniedPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginDeniedPacket.h; sourceTree = "<group>"; };
+		2F5D7EF21D580EDA00B2269C /* GameServerListPacket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameServerListPacket.cpp; sourceTree = "<group>"; };
+		2F5D7EF31D580EDA00B2269C /* GameServerListPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameServerListPacket.h; sourceTree = "<group>"; };
+		2F5D7EF51D5A7AA400B2269C /* PacketHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PacketHandler.cpp; sourceTree = "<group>"; };
+		2F5D7EF61D5A7AA400B2269C /* PacketHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PacketHandler.h; sourceTree = "<group>"; };
+		2F5D7EF81D5A80A000B2269C /* IPacketHandler.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = IPacketHandler.h; sourceTree = "<group>"; };
 		2FDB1D2C1C4A690800565F94 /* UltimaOnlineCore */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = UltimaOnlineCore; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FDB1D2F1C4A690800565F94 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,10 +123,11 @@
 			children = (
 				2F5D7ED31D52A17500B2269C /* Packet.cpp */,
 				2F5D7ED41D52A17500B2269C /* Packet.h */,
-				2F5D7EEA1D5659F000B2269C /* LoginSeedPacket.cpp */,
-				2F5D7EEB1D5659F000B2269C /* LoginSeedPacket.h */,
-				2F5D7ED71D52B3C100B2269C /* LoginRequestPacket.cpp */,
-				2F5D7ED81D52B3C100B2269C /* LoginRequestPacket.h */,
+				2F5D7EF51D5A7AA400B2269C /* PacketHandler.cpp */,
+				2F5D7EF61D5A7AA400B2269C /* PacketHandler.h */,
+				2F5D7EF81D5A80A000B2269C /* IPacketHandler.h */,
+				2F5D7EED1D58093A00B2269C /* Client */,
+				2F5D7EEE1D58094500B2269C /* Server */,
 			);
 			name = Packet;
 			path = packet;
@@ -161,6 +172,28 @@
 			children = (
 			);
 			name = Log;
+			sourceTree = "<group>";
+		};
+		2F5D7EED1D58093A00B2269C /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				2F5D7EEA1D5659F000B2269C /* LoginSeedPacket.cpp */,
+				2F5D7EEB1D5659F000B2269C /* LoginSeedPacket.h */,
+				2F5D7ED71D52B3C100B2269C /* LoginRequestPacket.cpp */,
+				2F5D7ED81D52B3C100B2269C /* LoginRequestPacket.h */,
+			);
+			name = Client;
+			sourceTree = "<group>";
+		};
+		2F5D7EEE1D58094500B2269C /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				2F5D7EEF1D58095B00B2269C /* LoginDeniedPacket.cpp */,
+				2F5D7EF01D58095B00B2269C /* LoginDeniedPacket.h */,
+				2F5D7EF21D580EDA00B2269C /* GameServerListPacket.cpp */,
+				2F5D7EF31D580EDA00B2269C /* GameServerListPacket.h */,
+			);
+			name = Server;
 			sourceTree = "<group>";
 		};
 		2FDB1D231C4A690800565F94 = {
@@ -246,7 +279,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F5D7EF41D580EDA00B2269C /* GameServerListPacket.cpp in Sources */,
 				2F5D7EEC1D5659F000B2269C /* LoginSeedPacket.cpp in Sources */,
+				2F5D7EF11D58095B00B2269C /* LoginDeniedPacket.cpp in Sources */,
 				2F5D7EC81D52970B00B2269C /* NetworkManager.cpp in Sources */,
 				2F5D7ED91D52B3C100B2269C /* LoginRequestPacket.cpp in Sources */,
 				2FDB1D301C4A690800565F94 /* main.mm in Sources */,
@@ -254,6 +289,7 @@
 				2F5D7ED51D52A17500B2269C /* Packet.cpp in Sources */,
 				2F5D7EE41D53FCBA00B2269C /* NetworkAdapter.cpp in Sources */,
 				2F5D7EE21D53D70400B2269C /* NetworkAdapteriOS.mm in Sources */,
+				2F5D7EF71D5A7AA400B2269C /* PacketHandler.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

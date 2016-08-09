@@ -16,6 +16,7 @@ namespace core {
             class Packet {
             public:
                 Packet(unsigned char packetID, unsigned short length);
+                Packet(const unsigned char *packetBuffer);
                 virtual ~Packet();
                 virtual void initPacket(bool fillCmd = true);
                 
@@ -38,6 +39,8 @@ namespace core {
                 unsigned int unpack32(unsigned int idx);
                 const char* unpackCStr(unsigned int idx);
                 int unicodeToAscii(const char *unicodeText, int len, char *asciiText);
+                
+                const char* getName();
                 
             protected:
                 void createPacketData();
