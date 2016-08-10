@@ -32,6 +32,7 @@ namespace core {
                 
                 Reason getReason();
                 void setReason(Reason reason);
+                const char* getReasonCStr();
                 
             private:
                 Reason _reason;

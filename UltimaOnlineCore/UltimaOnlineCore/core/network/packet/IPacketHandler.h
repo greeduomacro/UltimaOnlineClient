@@ -14,11 +14,13 @@
 namespace core {
     namespace network {
         namespace packet {
+            class IPacketHandler;
+            typedef std::vector<IPacketHandler*> PacketHandlerList;
             class IPacketHandler {
             public:
                 virtual bool handlePacket(core::network::packet::Packet &packet) = 0;
                 virtual bool deregisterHandler() = 0;
-                virtual void setHandlerRegisterList(std::vector<IPacketHandler*> &registerList) = 0;
+                virtual void setHandlerRegisterList(PacketHandlerList &registerList) = 0;
             };
         }
     }

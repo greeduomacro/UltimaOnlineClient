@@ -18,6 +18,18 @@ core::network::NetworkManager::NetworkManager() {
 }
 
 core::network::NetworkManager::~NetworkManager() {
+    for(auto &ent1 : _beforeSystemPacketHandlers) {
+        ent1.second.clear();
+    }
+    _beforeSystemPacketHandlers.clear();
+    for(auto &ent1 : _systemPacketHandlers) {
+        ent1.second.clear();
+    }
+    _systemPacketHandlers.clear();
+    for(auto &ent1 : _afterSystemPacketHandlers) {
+        ent1.second.clear();
+    }
+    _afterSystemPacketHandlers.clear();
 }
 
 core::network::NetworkManager& core::network::NetworkManager::getInstance() {
@@ -40,7 +52,7 @@ bool core::network::NetworkManager::send(core::network::packet::Packet& packet) 
 }
 
 bool core::network::NetworkManager::registerPacketHandler(HandlerQueue queue, unsigned char packetID, core::network::packet::IPacketHandler &packetHandler) {
-    PacketHandlerList &handlers = _afterSystemPacketHandlers[packetID];
+    packet::PacketHandlerList &handlers = _afterSystemPacketHandlers[packetID];
     switch (queue) {
         case HandlerQueue::AfterSystem:
             handlers = _afterSystemPacketHandlers[packetID];

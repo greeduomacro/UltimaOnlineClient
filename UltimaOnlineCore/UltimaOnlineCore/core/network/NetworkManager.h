@@ -39,10 +39,9 @@ namespace core {
             
             NetworkAdapter *_adapter;
             
-            typedef std::vector<core::network::packet::IPacketHandler*> PacketHandlerList;
-            std::map<unsigned char, PacketHandlerList> _beforeSystemPacketHandlers;
-            std::map<unsigned char, PacketHandlerList> _systemPacketHandlers;
-            std::map<unsigned char, PacketHandlerList> _afterSystemPacketHandlers;
+            std::map<unsigned char, packet::PacketHandlerList> _beforeSystemPacketHandlers;
+            std::map<unsigned char, packet::PacketHandlerList> _systemPacketHandlers;
+            std::map<unsigned char, packet::PacketHandlerList> _afterSystemPacketHandlers;
 
         };
     }
