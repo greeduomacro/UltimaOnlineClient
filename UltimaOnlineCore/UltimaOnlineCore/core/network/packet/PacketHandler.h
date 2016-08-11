@@ -46,20 +46,6 @@ namespace core {
                     }
                     return false;
                 }
-                
-//                friend inline bool operator==(const IPacketHandler &a, const PacketHandler<T>& that){
-//                    const PacketHandler<T> &obj = dynamic_cast<const PacketHandler<T>&>(a);
-//                    return obj == that;
-//                }
-//                
-//                inline bool operator==(const PacketHandler<T>& that){
-//                    return &this->_target == &that._target &&
-//                        &this->_operation == &that._operation &&
-//                        this->_registerList == that._registerList;
-//                }
-//                inline bool operator!=(const PacketHandler<T>& that){
-//                    return !(this == that);
-//                }
             private:
                 T& _target;
                 Operation _operation;
