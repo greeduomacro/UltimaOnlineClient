@@ -9,9 +9,7 @@
 #include "NetworkManager.h"
 #import <CoreFoundation/CoreFoundation.h>
 
-#include "easylogging++.h"
-
-INITIALIZE_EASYLOGGINGPP
+#include "Log.h"
 
 core::network::NetworkManager::NetworkManager() {
     _adapter = NetworkAdapter::getInstance();
@@ -46,25 +44,48 @@ bool core::network::NetworkManager::connect(const char* host, int port) {
 
 bool core::network::NetworkManager::send(core::network::packet::Packet& packet) {
     packet.buildPacket();
-    _adapter->logPacket(packet.getData(), packet.getLength());
+    log::Log::printPacket(false, packet.getData(), packet.getLength());
     _adapter->send(packet.getData(), packet.getLength());
     return true;
 }
 
 bool core::network::NetworkManager::registerPacketHandler(HandlerQueue queue, unsigned char packetID, core::network::packet::IPacketHandler &packetHandler) {
-    packet::PacketHandlerList &handlers = _afterSystemPacketHandlers[packetID];
+    packet::PacketHandlerList *handlers = &_afterSystemPacketHandlers[packetID];
     switch (queue) {
         case HandlerQueue::AfterSystem:
-            handlers = _afterSystemPacketHandlers[packetID];
+            handlers = &_afterSystemPacketHandlers[packetID];
             break;
         case HandlerQueue::System:
-            handlers = _systemPacketHandlers[packetID];
+            handlers = &_systemPacketHandlers[packetID];
             break;
         case HandlerQueue::BeforeSystem:
-            handlers = _beforeSystemPacketHandlers[packetID];
+            handlers = &_beforeSystemPacketHandlers[packetID];
             break;
     }
-    handlers.push_back(&packetHandler);
-    packetHandler.setHandlerRegisterList(handlers);
+    handlers->push_back(&packetHandler);
+    packetHandler.setHandlerRegisterList(*handlers);
     return true;
+}
+
+void core::network::NetworkManager::processPacket(const unsigned char *buf, unsigned short len) {
+    log::Log::printPacket(true, buf, len);
+    bool ignoreNextQueue = false;
+    core::network::packet::Packet *packet = core::network::packet::Packet::createPacket(buf, len);
+    
+    packet::PacketHandlerList &handlers = _beforeSystemPacketHandlers[buf[0]&0xff];
+    for(auto &handle : handlers) {
+        ignoreNextQueue = !handle->handlePacket(*packet) | false;
+    }
+    if (!ignoreNextQueue) {
+        handlers = _systemPacketHandlers[buf[0]&0xff];
+        for(auto &handle : handlers) {
+            ignoreNextQueue = !handle->handlePacket(*packet) | false;
+        }
+    }
+    if (!ignoreNextQueue) {
+        handlers = _afterSystemPacketHandlers[buf[0]&0xff];
+        for(auto &handle : handlers) {
+            ignoreNextQueue = !handle->handlePacket(*packet) | false;
+        }
+    }
 }

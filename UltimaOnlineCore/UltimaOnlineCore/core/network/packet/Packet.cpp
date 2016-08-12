@@ -13,16 +13,21 @@
 
 using namespace core::network::packet;
 
+unsigned int Packet::getPacketLength(const unsigned char *packetBuffer) {
+    int len = packetLengths[packetBuffer[0]];
+    if (len >= PACKET_LENGTH_DYNAMIC) {
+        len = (packetBuffer[1] << 8) | packetBuffer[2];
+    }
+    return len;
+}
+
 unsigned int Packet::getPacketLength(unsigned char packetID) {
     return packetLengths[packetID];
 }
 
 Packet::Packet(const unsigned char *packetBuffer) {
     _packetID = packetBuffer[0];
-    _length = packetLengths[_packetID];
-    if (_length >= PACKET_LENGTH_DYNAMIC) {
-        _length = (packetBuffer[1] << 8) | packetBuffer[2];
-    }
+    _length = Packet::getPacketLength(packetBuffer);
     if (_length > 0 && _length < std::numeric_limits<typeof(_length)>::max()) {
         this->createPacketData();
         memcpy(_packetData, packetBuffer, _length);
@@ -128,6 +133,10 @@ void Packet::packCStr(unsigned int idx, const char *data) {
 }
 
 const char* Packet::getName() {
+    return Packet::getPacketName(_packetID);
+}
+
+const char* Packet::getPacketName(unsigned char packetID) {
     static const char *packetNames[256] = {
         "Create character", /* 0x00 */
         "Disconnect notification", /* 0x01 */
@@ -386,9 +395,10 @@ const char* Packet::getName() {
         "", /* 0xfe */
         "", /* 0xff */ /* this is what the buffer returns when the socket is closed, 4 bytes */
     };
-    return packetNames[_packetID];
+    return packetNames[packetID];
 }
 
 Packet* Packet::createPacket(const unsigned char *packetBuffer, unsigned short length) {
+    
     return nullptr;
 }

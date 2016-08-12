@@ -30,6 +30,8 @@ namespace core {
             bool send(core::network::packet::Packet& packet);
             bool registerPacketHandler(HandlerQueue queue, unsigned char packetID, core::network::packet::IPacketHandler &packetHandler);
             
+            void processPacket(const unsigned char *buf, unsigned short len);
+            
             NetworkManager(NetworkManager const&) = delete;
             void operator=(NetworkManager const&) = delete;
             

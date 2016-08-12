@@ -8,10 +8,8 @@
 
 #include "NetworkAdapter.h"
 #include "NetworkAdapteriOS.h"
-
-#include "easylogging++.h"
-
-#define MIN_DECBUF_SIZE(in) ((in * 4) + 4)
+#include "Packet.h"
+#include "NetworkManager.h"
 
 core::network::NetworkAdapter* core::network::NetworkAdapter::getInstance() {
     static platforms::NetworkAdapteriOS instance;
@@ -23,39 +21,40 @@ core::network::NetworkAdapter::NetworkAdapter() {
 }
 
 void core::network::NetworkAdapter::clean() {
-    DecompressClean(&_huffObj);
+
 }
 
 void core::network::NetworkAdapter::parsePacket(unsigned char *buf, unsigned int length) {
-    this->logPacket(buf, length);
-    int outbyt=0;
-    char *dcbuf = (char *)malloc(MIN_DECBUF_SIZE(length));
-    int len = length;
-    Decompress(dcbuf, (char*)buf, &outbyt, &len, &_huffObj); // Descomprimir
-    memcpy(buf, dcbuf, outbyt); // Copiar buf descomprimido
-    free(dcbuf); // Liberar buf descomprimido
-}
-
-void core::network::NetworkAdapter::logPacket(const unsigned char *pBuffer, unsigned int length) {
-    int actLine = 0, actRow = 0;
-    printf("       0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F\n");
-    printf("      -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --\n");
-    for(actLine = 0; actLine < (length / 16) + 1; actLine++) {
-        printf("%04x: ", actLine * 16);
-        for(actRow = 0; actRow < 16; actRow++) {
-            if(actLine * 16 + actRow < length) {
-                printf("%02x ", (unsigned int)((unsigned char)pBuffer[actLine * 16 + actRow]));
+    static unsigned char recvBuf[15000] = {0};
+    static int recvBufLen = 0;
+    static unsigned char *pnow=recvBuf;
+    static bool partialPacket = false;
+    recvBufLen += length;
+    memcpy(pnow, buf, length);
+    int len = packet::Packet::getPacketLength(pnow);
+    if (recvBufLen != len) {
+        while(!partialPacket) {
+            len = packet::Packet::getPacketLength(pnow);
+            if (len <= recvBufLen && recvBufLen > 0) {
+                NetworkManager::getInstance().processPacket(pnow, len);
+                pnow += len;
+                recvBufLen -= len;
+            } else if(recvBufLen > 0) {
+                partialPacket = true;
             } else {
-                printf("-- ");
+                partialPacket = false;
             }
         }
-        printf(": ");
-        for(actRow = 0; actRow < 16; actRow++) {
-            if(actLine * 16 + actRow < length) {
-                printf("%c", isprint(pBuffer[actLine * 16 + actRow]) ? pBuffer[actLine * 16 + actRow] : '.');
-            }
+        if(partialPacket) {
+            memcpy(recvBuf, pnow, recvBufLen);
+            pnow = recvBuf;
+        } else {
+            pnow = recvBuf;
+            recvBufLen = 0;
         }
-        printf("\n");
+    } else {
+        NetworkManager::getInstance().processPacket(pnow, recvBufLen);
+        pnow = recvBuf;
+        recvBufLen = 0;
     }
-    return;
 }

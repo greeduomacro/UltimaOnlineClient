@@ -7,7 +7,6 @@
 //
 
 #include "NetworkAdapteriOS.h"
-#include "easylogging++.h"
 #include "LoginRequestPacket.h"
 #include "NetworkManager.h"
 
