@@ -10,6 +10,9 @@
 #include <limits>
 #include <stdlib.h>
 #include <string.h>
+#include <map>
+#include "Log.h"
+#include "server/ServerPackets.h"
 
 using namespace core::network::packet;
 
@@ -28,6 +31,7 @@ unsigned int Packet::getPacketLength(unsigned char packetID) {
 Packet::Packet(const unsigned char *packetBuffer) {
     _packetID = packetBuffer[0];
     _length = Packet::getPacketLength(packetBuffer);
+    _packetData = nullptr;
     if (_length > 0 && _length < std::numeric_limits<typeof(_length)>::max()) {
         this->createPacketData();
         memcpy(_packetData, packetBuffer, _length);
@@ -396,9 +400,4 @@ const char* Packet::getPacketName(unsigned char packetID) {
         "", /* 0xff */ /* this is what the buffer returns when the socket is closed, 4 bytes */
     };
     return packetNames[packetID];
-}
-
-Packet* Packet::createPacket(const unsigned char *packetBuffer, unsigned short length) {
-    
-    return nullptr;
 }

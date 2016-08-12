@@ -8,8 +8,8 @@
 
 #include "NetworkManager.h"
 #import <CoreFoundation/CoreFoundation.h>
-
 #include "Log.h"
+#include "ServerPacket.h"
 
 core::network::NetworkManager::NetworkManager() {
     _adapter = NetworkAdapter::getInstance();
@@ -42,7 +42,7 @@ bool core::network::NetworkManager::connect(const char* host, int port) {
     return true;
 }
 
-bool core::network::NetworkManager::send(core::network::packet::Packet& packet) {
+bool core::network::NetworkManager::send(core::network::packet::client::ClientPacket& packet) {
     packet.buildPacket();
     log::Log::printPacket(false, packet.getData(), packet.getLength());
     _adapter->send(packet.getData(), packet.getLength());
@@ -70,7 +70,7 @@ bool core::network::NetworkManager::registerPacketHandler(HandlerQueue queue, un
 void core::network::NetworkManager::processPacket(const unsigned char *buf, unsigned short len) {
     log::Log::printPacket(true, buf, len);
     bool ignoreNextQueue = false;
-    core::network::packet::Packet *packet = core::network::packet::Packet::createPacket(buf, len);
+    core::network::packet::server::ServerPacket *packet = core::network::packet::server::ServerPacket::createPacket(buf, len);
     
     packet::PacketHandlerList &handlers = _beforeSystemPacketHandlers[buf[0]&0xff];
     for(auto &handle : handlers) {

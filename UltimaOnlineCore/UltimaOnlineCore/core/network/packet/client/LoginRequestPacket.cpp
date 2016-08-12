@@ -9,9 +9,9 @@
 #include "LoginRequestPacket.h"
 #include <stdlib.h>
 #include <string.h>
-using namespace core::network::packet;
+using namespace core::network::packet::client;
 
-LoginRequestPacket::LoginRequestPacket(const char *login, const char *password) : Packet(0x80, 62) {
+LoginRequestPacket::LoginRequestPacket(const char *login, const char *password) : ClientPacket(0x80, 62) {
     _login = (char*)malloc(strlen(login)+1);
     strcpy(_login, login);
     

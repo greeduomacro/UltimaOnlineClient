@@ -10,9 +10,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-using namespace core::network::packet;
+using namespace core::network::packet::client;
 
-LoginSeedPacket::LoginSeedPacket(const char *ipAddress) : Packet(0x00, 4) {
+LoginSeedPacket::LoginSeedPacket(const char *ipAddress) : ClientPacket(0x00, 4) {
     _ipAddress = (char*)malloc(strlen(ipAddress)+1);
     strcpy(_ipAddress, ipAddress);
 }

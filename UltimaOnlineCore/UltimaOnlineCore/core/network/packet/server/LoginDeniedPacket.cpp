@@ -10,13 +10,20 @@
 
 #include <stdlib.h>
 #include <string.h>
-using namespace core::network::packet;
 
-LoginDeniedPacket::LoginDeniedPacket(const unsigned char *packetBuffer) : Packet(packetBuffer) {
-    _reason = (core::network::packet::LoginDeniedPacket::Reason)this->unpack8(1);
+using namespace core::network::packet::server;
+
+LoginDeniedPacket::LoginDeniedPacket() : ServerPacket(0x82, 0) {
 }
 
-core::network::packet::LoginDeniedPacket::Reason LoginDeniedPacket::getReason() {
+LoginDeniedPacket::LoginDeniedPacket(const unsigned char *packetBuffer) : ServerPacket(packetBuffer) {
+    _reason = (core::network::packet::server::LoginDeniedPacket::Reason)this->unpack8(1);
+}
+
+LoginDeniedPacket::~LoginDeniedPacket() {
+}
+
+LoginDeniedPacket::Reason LoginDeniedPacket::getReason() {
     return _reason;
 }
 
@@ -52,6 +59,11 @@ const char* LoginDeniedPacket::getReasonCStr() {
     }
 }
 
-void LoginDeniedPacket::setReason(core::network::packet::LoginDeniedPacket::Reason reason) {
+void LoginDeniedPacket::setReason(LoginDeniedPacket::Reason reason) {
     _reason = reason;
+}
+
+ServerPacket* LoginDeniedPacket::clone(const unsigned char *packetBuffer) {
+    LoginDeniedPacket *cloned = new LoginDeniedPacket(packetBuffer);
+    return cloned;
 }

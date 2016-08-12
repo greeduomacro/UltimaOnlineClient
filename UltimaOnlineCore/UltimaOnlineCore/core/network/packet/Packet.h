@@ -90,8 +90,6 @@ namespace core {
                 virtual ~Packet();
                 virtual void initPacket(bool fillCmd = true);
                 
-                virtual void buildPacket() = 0;
-                
                 unsigned char getPacketID();
                 void setPacketID(unsigned char packetID);
                 

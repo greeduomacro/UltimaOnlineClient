@@ -14,6 +14,7 @@
 #include <map>
 #include <vector>
 #include "packet/PacketHandler.h"
+#include "packet/client/ClientPacket.h"
 
 namespace core {
     namespace network {
@@ -27,7 +28,7 @@ namespace core {
             static NetworkManager& getInstance();
             
             bool connect(const char* host, int port);
-            bool send(core::network::packet::Packet& packet);
+            bool send(core::network::packet::client::ClientPacket& packet);
             bool registerPacketHandler(HandlerQueue queue, unsigned char packetID, core::network::packet::IPacketHandler &packetHandler);
             
             void processPacket(const unsigned char *buf, unsigned short len);

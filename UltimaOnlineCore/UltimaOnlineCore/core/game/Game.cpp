@@ -15,6 +15,7 @@
 using namespace core::game;
 using namespace core::network;
 using namespace core::network::packet;
+using namespace core::network::packet::server;
 
 Game& Game::getInstance() {
     static Game instance; // Guaranteed to be destroyed.
@@ -35,6 +36,6 @@ Game::~Game() {
 
 bool Game::handleLoginDenied(core::network::packet::Packet &packet) {
     LoginDeniedPacket &deniedPacket = (LoginDeniedPacket&)packet;
-    printf("[LOGIN DENIED] Reason: %s", deniedPacket.getReasonCStr());
+    printf("[LOGIN DENIED] Reason: %s\n", deniedPacket.getReasonCStr());
     return true;
 }

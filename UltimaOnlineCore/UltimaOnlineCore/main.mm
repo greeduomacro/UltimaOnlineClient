@@ -10,10 +10,11 @@
 #include <unordered_map>
 #include <CoreFoundation/CoreFoundation.h>
 #include "core/network/NetworkManager.h"
-#include "core/network/packet/LoginSeedPacket.h"
-#include "core/network/packet/LoginRequestPacket.h"
+#include "core/network/packet/client/LoginSeedPacket.h"
+#include "core/network/packet/client/LoginRequestPacket.h"
 #include "core/game/Game.h"
 
+using namespace core::network::packet::client;
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
@@ -21,9 +22,9 @@ int main(int argc, const char * argv[]) {
     core::network::NetworkManager &networkManager = core::network::NetworkManager::getInstance();
     core::game::Game &game = core::game::Game::getInstance();
     if (networkManager.connect("10.0.1.11", 2593)) {
-        core::network::packet::LoginSeedPacket loginSeed("127.0.0.1");
+        LoginSeedPacket loginSeed("127.0.0.1");
         networkManager.send(loginSeed);
-        core::network::packet::LoginRequestPacket loginRequest("", "admin");
+        LoginRequestPacket loginRequest("admin", "admin");
         networkManager.send(loginRequest);
     }
 //    CFRunLoopRun();
