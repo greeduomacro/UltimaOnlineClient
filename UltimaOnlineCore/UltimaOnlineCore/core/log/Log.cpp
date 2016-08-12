@@ -6,6 +6,7 @@
 //  Copyright © 2016 Hercules Junior. All rights reserved.
 //
 
+#include <stdio.h>
 #include "Log.h"
 #include <ctime>
 #include "Packet.h"
@@ -42,4 +43,38 @@ void core::log::Log::printPacket(bool isReceiving, const unsigned char* packetBu
         printf("\n");
     }
     printf("\n");
+}
+
+void core::log::Log::printInfo(const char* format, ...) {
+    time_t now = time(0);
+    tm *ltm = localtime(&now);
+    printf("[%02d:%02d:%02d INFO]", ltm->tm_hour, ltm->tm_min, ltm->tm_sec);
+    va_list args;
+    va_start(args, format);
+    writeLog(format, args);
+    va_end(args);
+}
+
+void core::log::Log::printDebug(const char* format, ...) {
+    time_t now = time(0);
+    tm *ltm = localtime(&now);
+    printf("[%02d:%02d:%02d DEBUG]", ltm->tm_hour, ltm->tm_min, ltm->tm_sec);
+    va_list args;
+    va_start(args, format);
+    writeLog(format, args);
+    va_end(args);
+}
+
+void core::log::Log::printWarn(const char* format, ...) {
+    time_t now = time(0);
+    tm *ltm = localtime(&now);
+    printf("[%02d:%02d:%02d WARN]", ltm->tm_hour, ltm->tm_min, ltm->tm_sec);
+    va_list args;
+    va_start(args, format);
+    writeLog(format, args);
+    va_end(args);
+}
+
+void core::log::Log::writeLog(const char* format, va_list args) {
+    vprintf(format, args);
 }
