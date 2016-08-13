@@ -9,8 +9,8 @@
 #include "Game.h"
 #include "NetworkManager.h"
 #include "PacketHandler.h"
-
-#include "LoginDeniedPacket.h"
+#include "Log.h"
+#include "ServerPackets.h"
 
 using namespace core::game;
 using namespace core::network;
@@ -26,6 +26,9 @@ Game& Game::getInstance() {
 Game::Game() {
     PacketHandler<Game> *loginDeniedPacketHandler = new PacketHandler<Game>(*this, &Game::handleLoginDenied);
     network::NetworkManager::getInstance().registerPacketHandler(NetworkManager::HandlerQueue::System, 0x82, *loginDeniedPacketHandler);
+    
+    PacketHandler<Game> *gameServerListPacketHandler = new PacketHandler<Game>(*this, &Game::handleGameServerList);
+    network::NetworkManager::getInstance().registerPacketHandler(NetworkManager::HandlerQueue::System, 0xA8, *gameServerListPacketHandler);
 }
 
 Game::~Game() {
@@ -34,8 +37,15 @@ Game::~Game() {
 
 /* UO Handlers */
 
-bool Game::handleLoginDenied(core::network::packet::Packet &packet) {
+bool Game::handleLoginDenied(core::network::packet::server::ServerPacket &packet) {
     LoginDeniedPacket &deniedPacket = (LoginDeniedPacket&)packet;
     printf("[LOGIN DENIED] Reason: %s\n", deniedPacket.getReasonCStr());
+    return true;
+}
+
+bool Game::handleGameServerList(core::network::packet::server::ServerPacket &packet) {
+    for (auto &i : ((GameServerListPacket&)packet).getServerList()) {
+        LOG_DEBUG("Server[%d]: %s, %s\n", i->index, i->name, i->full!=0 ? "full":"empty");
+    }
     return true;
 }

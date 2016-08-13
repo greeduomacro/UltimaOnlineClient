@@ -30,10 +30,14 @@ namespace core {
                         unsigned int address;
                     };
                     
+                    typedef std::vector<GameServerListPacket::ServerEntry*> ServerEntryList;
+                    
+                    const ServerEntryList& getServerList();
+                    
                     virtual ServerPacket* clone(const unsigned char *packetBuffer);
                     
                 private:
-                    std::vector<ServerEntry*> _serverList;
+                    ServerEntryList _serverList;
                     unsigned char _flag;
                 };
             }

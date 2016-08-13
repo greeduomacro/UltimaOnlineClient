@@ -9,7 +9,7 @@
 #ifndef CORE_NETWORK_PACKET_PACKETHANDLER_H
 #define CORE_NETWORK_PACKET_PACKETHANDLER_H
 
-#include "Packet.h"
+#include "ServerPacket.h"
 #include "IPacketHandler.h"
 #include <vector>
 
@@ -20,14 +20,15 @@ namespace core {
             class PacketHandler : public IPacketHandler {
             public:
                 /* delegate method signature
-                 @return TRUE if wants to process packet in others QUEUES, otherwise FALSE */
-                typedef bool (T::*Operation)(core::network::packet::Packet &packet);
+                 @return TRUE if wants to process packet in others QUEUES, otherwise FALSE 
+                 */
+                typedef bool (T::*Operation)(core::network::packet::server::ServerPacket &packet);
                 
                 PacketHandler(T& target, Operation operation) : _target(target) , _operation(operation) {
                     _registerList = nullptr;
                 }
                 
-                virtual bool handlePacket(core::network::packet::Packet &packet) {
+                virtual bool handlePacket(core::network::packet::server::ServerPacket &packet) {
                     return (_target.*_operation)(packet);
                 }
                 

@@ -18,9 +18,17 @@ GameServerListPacket::GameServerListPacket() : ServerPacket(0x82, 0) {
 GameServerListPacket::GameServerListPacket(const unsigned char *packetBuffer) : ServerPacket(packetBuffer) {
     _flag = this->unpack8(3);
     unsigned short count = this->unpack16(4);
+    int idx = 6;
     for (int i = 0; i < count; ++i) {
         ServerEntry *entry = (ServerEntry*)malloc(sizeof(ServerEntry));
-        memcpy(entry, packetBuffer+4, sizeof(ServerEntry));
+        entry->index = this->unpack16(idx);
+        idx += 2;
+        strcpy(entry->name, this->unpackCStr(idx));
+        idx += 32;
+        entry->full = this->unpack8(idx++);
+        entry->timezone = this->unpack8(idx++);
+        entry->address = this->unpack32(idx);
+        idx += 4;
         _serverList.push_back(entry);
     }
 }
@@ -31,6 +39,10 @@ GameServerListPacket::~GameServerListPacket() {
         free(entry);
     }
     _serverList.clear();
+}
+
+const std::vector<GameServerListPacket::ServerEntry*>& GameServerListPacket::getServerList() {
+    return _serverList;
 }
 
 ServerPacket* GameServerListPacket::clone(const unsigned char *packetBuffer) {

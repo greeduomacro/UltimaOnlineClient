@@ -104,7 +104,7 @@ ServerPacket* ServerPacket::createPacket(const unsigned char *packetBuffer, unsi
         {0xA3, nullptr},
         {0xA5, nullptr},
         {0xA6, nullptr},
-        {0xA8, nullptr},
+        {0xA8, new GameServerListPacket()},
         {0xA9, nullptr},
         {0xAA, nullptr},
         {0xAB, nullptr},

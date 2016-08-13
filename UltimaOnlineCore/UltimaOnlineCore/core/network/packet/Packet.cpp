@@ -136,6 +136,10 @@ void Packet::packCStr(unsigned int idx, const char *data) {
     strcpy((char*)_packetData+idx, data);
 }
 
+const char* Packet::unpackCStr(unsigned int idx) {
+    return (char*)_packetData+idx;
+}
+
 const char* Packet::getName() {
     return Packet::getPacketName(_packetID);
 }

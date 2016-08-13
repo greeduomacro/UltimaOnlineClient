@@ -18,7 +18,7 @@ namespace core {
             typedef std::vector<IPacketHandler*> PacketHandlerList;
             class IPacketHandler {
             public:
-                virtual bool handlePacket(core::network::packet::Packet &packet) = 0;
+                virtual bool handlePacket(core::network::packet::server::ServerPacket &packet) = 0;
                 virtual bool deregisterHandler() = 0;
                 virtual void setHandlerRegisterList(PacketHandlerList &registerList) = 0;
             };

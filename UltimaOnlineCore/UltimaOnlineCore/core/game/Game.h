@@ -9,7 +9,7 @@
 #ifndef CORE_GAME_GAME_H
 #define CORE_GAME_GAME_H
 
-#include "Packet.h"
+#include "ServerPacket.h"
 
 namespace core {
     namespace game {
@@ -21,7 +21,8 @@ namespace core {
             ~Game();
             
             //Handlers
-            bool handleLoginDenied(core::network::packet::Packet &packet);
+            bool handleLoginDenied(core::network::packet::server::ServerPacket &packet);
+            bool handleGameServerList(core::network::packet::server::ServerPacket &packet);
         };
     }
 }

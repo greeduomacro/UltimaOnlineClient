@@ -88,4 +88,5 @@ void core::network::NetworkManager::processPacket(const unsigned char *buf, unsi
             ignoreNextQueue = !handle->handlePacket(*packet) | false;
         }
     }
+    delete packet;
 }
