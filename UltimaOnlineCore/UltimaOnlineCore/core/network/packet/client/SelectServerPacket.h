@@ -17,13 +17,13 @@ namespace core {
             namespace client {
                 class SelectServerPacket : public ClientPacket {
                 public:
-                    SelectServerPacket(short choice);
+                    SelectServerPacket(uint16_t choice);
                     ~SelectServerPacket();
                     
                     virtual void buildPacket();
                     
                 private:
-                    short _choice;
+                    uint16_t _choice;
                 };
             }
         }

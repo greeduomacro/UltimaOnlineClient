@@ -17,8 +17,8 @@ namespace core {
             namespace client {
                 class ClientPacket : public Packet {
                 public:
-                    ClientPacket(unsigned char packetID, unsigned short length);
-                    ClientPacket(const unsigned char *packetBuffer);
+                    ClientPacket(uint8_t packetID, uint16_t length);
+                    ClientPacket(const uint8_t *packetBuffer);
                     virtual ~ClientPacket();
                     virtual void buildPacket() = 0;
                 };

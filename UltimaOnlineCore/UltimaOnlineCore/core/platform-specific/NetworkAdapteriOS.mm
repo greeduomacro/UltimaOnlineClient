@@ -20,7 +20,7 @@ static void readCallBack(CFReadStreamRef stream, CFStreamEventType event, void *
             break;
         }
         case kCFStreamEventHasBytesAvailable: {
-            unsigned char buf[NETWORK_BUFSIZE];
+            uint8_t buf[NETWORK_BUFSIZE];
             int len = (int)CFReadStreamRead(stream, buf, NETWORK_BUFSIZE);
             while (len > 0) {
                 core::network::NetworkAdapter::getInstance()->parsePacket(buf, len);

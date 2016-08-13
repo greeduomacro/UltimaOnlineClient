@@ -16,7 +16,7 @@ using namespace core::network::packet::server;
 LoginDeniedPacket::LoginDeniedPacket() : ServerPacket(0x82, 0) {
 }
 
-LoginDeniedPacket::LoginDeniedPacket(const unsigned char *packetBuffer) : ServerPacket(packetBuffer) {
+LoginDeniedPacket::LoginDeniedPacket(const uint8_t *packetBuffer) : ServerPacket(packetBuffer) {
     _reason = (core::network::packet::server::LoginDeniedPacket::Reason)this->unpack8(1);
 }
 
@@ -63,7 +63,7 @@ void LoginDeniedPacket::setReason(LoginDeniedPacket::Reason reason) {
     _reason = reason;
 }
 
-ServerPacket* LoginDeniedPacket::clone(const unsigned char *packetBuffer) {
+ServerPacket* LoginDeniedPacket::clone(const uint8_t *packetBuffer) {
     LoginDeniedPacket *cloned = new LoginDeniedPacket(packetBuffer);
     return cloned;
 }

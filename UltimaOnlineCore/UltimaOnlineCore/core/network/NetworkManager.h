@@ -29,9 +29,9 @@ namespace core {
             
             bool connect(const char* host, int port);
             bool send(core::network::packet::client::ClientPacket& packet);
-            bool registerPacketHandler(HandlerQueue queue, unsigned char packetID, core::network::packet::IPacketHandler &packetHandler);
+            bool registerPacketHandler(HandlerQueue queue, uint8_t packetID, core::network::packet::IPacketHandler &packetHandler);
             
-            void processPacket(const unsigned char *buf, unsigned short len);
+            void processPacket(const uint8_t *buf, uint16_t len);
             
             NetworkManager(NetworkManager const&) = delete;
             void operator=(NetworkManager const&) = delete;
@@ -42,9 +42,9 @@ namespace core {
             
             NetworkAdapter *_adapter;
             
-            std::map<unsigned char, packet::PacketHandlerList> _beforeSystemPacketHandlers;
-            std::map<unsigned char, packet::PacketHandlerList> _systemPacketHandlers;
-            std::map<unsigned char, packet::PacketHandlerList> _afterSystemPacketHandlers;
+            std::map<uint8_t, packet::PacketHandlerList> _beforeSystemPacketHandlers;
+            std::map<uint8_t, packet::PacketHandlerList> _systemPacketHandlers;
+            std::map<uint8_t, packet::PacketHandlerList> _afterSystemPacketHandlers;
 
         };
     }

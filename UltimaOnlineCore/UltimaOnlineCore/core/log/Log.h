@@ -28,7 +28,7 @@ namespace core {
             static void printInfo(const char* format, ...);
             static void printDebug(const char* format, ...);
             static void printWarn(const char* format, ...);
-            static void printPacket(bool isReceiving, const unsigned char* packetBuffer, unsigned short length);
+            static void printPacket(bool isReceiving, const uint8_t* packetBuffer, uint16_t length);
         protected:
             static void writeLog(const char* format, va_list args);
         private:

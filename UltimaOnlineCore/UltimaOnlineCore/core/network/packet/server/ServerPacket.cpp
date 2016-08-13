@@ -14,18 +14,18 @@
 
 using namespace core::network::packet::server;
 
-ServerPacket::ServerPacket(unsigned char packetID, unsigned short length) : core::network::packet::Packet(packetID, length) {
+ServerPacket::ServerPacket(uint8_t packetID, uint16_t length) : core::network::packet::Packet(packetID, length) {
     
 }
-ServerPacket::ServerPacket(const unsigned char *packetBuffer) : core::network::packet::Packet(packetBuffer) {
+ServerPacket::ServerPacket(const uint8_t *packetBuffer) : core::network::packet::Packet(packetBuffer) {
     
 }
 ServerPacket::~ServerPacket() {
     
 }
 
-ServerPacket* ServerPacket::createPacket(const unsigned char *packetBuffer, unsigned short length) {
-    static std::map<unsigned char, ServerPacket*> packetTypes = {
+ServerPacket* ServerPacket::createPacket(const uint8_t *packetBuffer, uint16_t length) {
+    static std::map<uint8_t, ServerPacket*> packetTypes = {
         {0x0B, nullptr},
         {0x0C, nullptr},
         {0x11, nullptr},
@@ -152,7 +152,7 @@ ServerPacket* ServerPacket::createPacket(const unsigned char *packetBuffer, unsi
         {0xF3, nullptr},
         {0xF5, nullptr}
     };
-    unsigned char packetID = packetBuffer[0];
+    uint8_t packetID = packetBuffer[0];
     ServerPacket *packet = packetTypes[packetID];
     if (packet == nullptr) {
         LOG_WARN("[ServerPacket::createPacket] Packet 0x%02X unknown (%s)\n", packetID, Packet::getPacketName(packetID));

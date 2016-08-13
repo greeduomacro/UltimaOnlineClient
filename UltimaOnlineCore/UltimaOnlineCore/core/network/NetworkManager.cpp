@@ -49,7 +49,7 @@ bool core::network::NetworkManager::send(core::network::packet::client::ClientPa
     return true;
 }
 
-bool core::network::NetworkManager::registerPacketHandler(HandlerQueue queue, unsigned char packetID, core::network::packet::IPacketHandler &packetHandler) {
+bool core::network::NetworkManager::registerPacketHandler(HandlerQueue queue, uint8_t packetID, core::network::packet::IPacketHandler &packetHandler) {
     packet::PacketHandlerList *handlers = &_afterSystemPacketHandlers[packetID];
     switch (queue) {
         case HandlerQueue::AfterSystem:
@@ -67,7 +67,7 @@ bool core::network::NetworkManager::registerPacketHandler(HandlerQueue queue, un
     return true;
 }
 
-void core::network::NetworkManager::processPacket(const unsigned char *buf, unsigned short len) {
+void core::network::NetworkManager::processPacket(const uint8_t *buf, uint16_t len) {
     log::Log::printPacket(true, buf, len);
     bool ignoreNextQueue = false;
     core::network::packet::server::ServerPacket *packet = core::network::packet::server::ServerPacket::createPacket(buf, len);

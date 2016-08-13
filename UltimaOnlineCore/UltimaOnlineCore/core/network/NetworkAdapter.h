@@ -21,7 +21,7 @@ namespace core {
         public:
             static NetworkAdapter* getInstance();
             
-            void parsePacket(unsigned char *buf, unsigned int length);
+            void parsePacket(const uint8_t *buf, unsigned int length);
             
             void clean();
             

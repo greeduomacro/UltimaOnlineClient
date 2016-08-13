@@ -11,7 +11,7 @@
 #include <ctime>
 #include "Packet.h"
 
-void core::log::Log::printPacket(bool isReceiving, const unsigned char* packetBuffer, unsigned short length) {
+void core::log::Log::printPacket(bool isReceiving, const uint8_t* packetBuffer, uint16_t length) {
     time_t now = time(0);
     tm *ltm = localtime(&now);
     int actLine = 0, actRow = 0;
@@ -29,7 +29,7 @@ void core::log::Log::printPacket(bool isReceiving, const unsigned char* packetBu
         printf("%04x: ", actLine * 16);
         for(actRow = 0; actRow < 16; actRow++) {
             if(actLine * 16 + actRow < length) {
-                printf("%02x ", (unsigned int)((unsigned char)packetBuffer[actLine * 16 + actRow]));
+                printf("%02x ", (unsigned int)((uint8_t)packetBuffer[actLine * 16 + actRow]));
             } else {
                 printf("-- ");
             }

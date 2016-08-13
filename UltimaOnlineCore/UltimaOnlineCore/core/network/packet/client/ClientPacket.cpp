@@ -10,10 +10,10 @@
 
 using namespace core::network::packet::client;
 
-ClientPacket::ClientPacket(unsigned char packetID, unsigned short length) : core::network::packet::Packet(packetID, length) {
+ClientPacket::ClientPacket(uint8_t packetID, uint16_t length) : core::network::packet::Packet(packetID, length) {
 }
 
-ClientPacket::ClientPacket(const unsigned char* packetBuffer) : core::network::packet::Packet(packetBuffer) {
+ClientPacket::ClientPacket(const uint8_t* packetBuffer) : core::network::packet::Packet(packetBuffer) {
 }
 
 ClientPacket::~ClientPacket() {

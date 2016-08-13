@@ -10,7 +10,7 @@
 
 using namespace core::network::packet::client;
 
-SelectServerPacket::SelectServerPacket(short choice) : ClientPacket(0xA0, 3) {
+SelectServerPacket::SelectServerPacket(uint16_t choice) : ClientPacket(0xA0, 3) {
     _choice = choice;
 }
 

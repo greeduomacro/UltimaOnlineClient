@@ -16,7 +16,7 @@
 
 using namespace core::network::packet;
 
-unsigned int Packet::getPacketLength(const unsigned char *packetBuffer) {
+unsigned int Packet::getPacketLength(const uint8_t *packetBuffer) {
     int len = packetLengths[packetBuffer[0]];
     if (len >= PACKET_LENGTH_DYNAMIC) {
         len = (packetBuffer[1] << 8) | packetBuffer[2];
@@ -24,11 +24,11 @@ unsigned int Packet::getPacketLength(const unsigned char *packetBuffer) {
     return len;
 }
 
-unsigned int Packet::getPacketLength(unsigned char packetID) {
+unsigned int Packet::getPacketLength(uint8_t packetID) {
     return packetLengths[packetID];
 }
 
-Packet::Packet(const unsigned char *packetBuffer) {
+Packet::Packet(const uint8_t *packetBuffer) {
     _packetID = packetBuffer[0];
     _length = Packet::getPacketLength(packetBuffer);
     _packetData = nullptr;
@@ -38,7 +38,7 @@ Packet::Packet(const unsigned char *packetBuffer) {
     }
 }
 
-Packet::Packet(unsigned char packetID, unsigned short length) {
+Packet::Packet(uint8_t packetID, uint16_t length) {
     _packetID = packetID;
     _length = length;
     _packetData = nullptr;
@@ -48,7 +48,7 @@ void Packet::createPacketData() {
     if (_packetData != nullptr) {
         free(_packetData);
     }
-    _packetData = (unsigned char*)calloc(1, _length * sizeof(unsigned char));
+    _packetData = (uint8_t*)calloc(1, _length * sizeof(uint8_t));
 }
 
 Packet::~Packet() {
@@ -57,14 +57,14 @@ Packet::~Packet() {
     }
 }
 
-unsigned char* Packet::getData() {
+uint8_t* Packet::getData() {
     return _packetData;
 }
 
-unsigned short Packet::getLength() {
+uint16_t Packet::getLength() {
     return _length;
 }
-void Packet::setLength(unsigned short length) {
+void Packet::setLength(uint16_t length) {
     _length = length;
 }
 
@@ -93,41 +93,41 @@ int Packet::unicodeToAscii(const char *unicodeText, int Len, char *asciiText) {
     return nonAsciiCompatible;
 }
 
-unsigned int Packet::unpack32(unsigned int idx) {
+uint32_t Packet::unpack32(unsigned int idx) {
     unsigned char *data = _packetData+idx;
     return (data[0] << 24) | (data[1] << 16) | (data[2] << 8) | data[3];
 }
 
-unsigned short Packet::unpack16(unsigned int idx) {
+uint16_t Packet::unpack16(unsigned int idx) {
     unsigned char *data = _packetData+idx;
     return (data[0] << 8) | data[1];
 }
 
-unsigned char Packet::unpack8(unsigned int idx) {
-    unsigned char *data = _packetData+idx;
+uint8_t Packet::unpack8(unsigned int idx) {
+    uint8_t *data = _packetData+idx;
     return data[0];
 }
 
-void Packet::pack32(unsigned int idx, unsigned int x) {
-    unsigned char *data = _packetData+idx;
-    data[0] = (unsigned char)(x >> 24);
-    data[1] = (unsigned char)((x >> 16) & 0xff);
-    data[2] = (unsigned char)((x >> 8) & 0xff);
-    data[3] = (unsigned char)(x & 0xff);
+void Packet::pack32(unsigned int idx, uint32_t x) {
+    uint8_t *data = _packetData+idx;
+    data[0] = (uint8_t)(x >> 24);
+    data[1] = (uint8_t)((x >> 16) & 0xff);
+    data[2] = (uint8_t)((x >> 8) & 0xff);
+    data[3] = (uint8_t)(x & 0xff);
     
     return;
 }
 
-void Packet::pack16(unsigned int idx, unsigned short x) {
-    unsigned char *data = _packetData+idx;
+void Packet::pack16(unsigned int idx, uint16_t x) {
+    uint8_t *data = _packetData+idx;
     data[0] = x >> 8;
     data[1] = x & 0xff;
     
     return;
 }
 
-void Packet::pack8(unsigned int idx, unsigned char x) {
-    unsigned char *data = _packetData+idx;
+void Packet::pack8(unsigned int idx, uint8_t x) {
+    uint8_t *data = _packetData+idx;
     data[0] = x;
     return;
 }
@@ -144,7 +144,7 @@ const char* Packet::getName() {
     return Packet::getPacketName(_packetID);
 }
 
-const char* Packet::getPacketName(unsigned char packetID) {
+const char* Packet::getPacketName(uint8_t packetID) {
     static const char *packetNames[256] = {
         "Create character", /* 0x00 */
         "Disconnect notification", /* 0x01 */

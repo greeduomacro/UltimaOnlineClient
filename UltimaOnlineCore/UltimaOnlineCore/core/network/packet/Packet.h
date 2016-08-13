@@ -11,6 +11,8 @@
 
 #define PACKET_LENGTH_DYNAMIC 0x8000
 
+#include <stdint.h>
+
 namespace core {
     namespace network {
         namespace packet {
@@ -85,43 +87,43 @@ namespace core {
             
             class Packet {
             public:
-                Packet(unsigned char packetID, unsigned short length);
-                Packet(const unsigned char *packetBuffer);
+                Packet(uint8_t packetID, uint16_t length);
+                Packet(const uint8_t *packetBuffer);
                 virtual ~Packet();
                 virtual void initPacket(bool fillCmd = true);
                 
-                unsigned char getPacketID();
-                void setPacketID(unsigned char packetID);
+                uint8_t getPacketID();
+                void setPacketID(uint8_t packetID);
                 
-                unsigned short getLength();
-                void setLength(unsigned short length);
+                uint16_t getLength();
+                void setLength(uint16_t length);
                 
-                unsigned char* getData();
+                uint8_t* getData();
                 
-                void pack8(unsigned int idx, unsigned char x);
-                void pack16(unsigned int idx, unsigned short x);
-                void pack32(unsigned int idx, unsigned int x);
+                void pack8(unsigned int idx, uint8_t x);
+                void pack16(unsigned int idx, uint16_t x);
+                void pack32(unsigned int idx, uint32_t x);
                 void packCStr(unsigned int idx, const char *data);
-                unsigned char unpack8(unsigned int idx);
-                unsigned short unpack16(unsigned int idx);
-                unsigned int unpack32(unsigned int idx);
+                uint8_t unpack8(unsigned int idx);
+                uint16_t unpack16(unsigned int idx);
+                uint32_t unpack32(unsigned int idx);
                 const char* unpackCStr(unsigned int idx);
                 int unicodeToAscii(const char *unicodeText, int len, char *asciiText);
                 
                 const char* getName();
                 
-                static const char* getPacketName(unsigned char packetID);
-                static unsigned int getPacketLength(unsigned char packetID);
-                static unsigned int getPacketLength(const unsigned char *packetBuffer);
-                static Packet* createPacket(const unsigned char *packetBuffer, unsigned short length);
+                static const char* getPacketName(uint8_t packetID);
+                static unsigned int getPacketLength(uint8_t packetID);
+                static unsigned int getPacketLength(const uint8_t *packetBuffer);
+                static Packet* createPacket(const uint8_t *packetBuffer, uint16_t length);
                 
             protected:
                 void createPacketData();
                 
-                unsigned char *_packetData;
+                uint8_t *_packetData;
             private:
-                unsigned char _packetID;
-                unsigned short _length;
+                uint8_t _packetID;
+                uint16_t _length;
             };
         }
     }

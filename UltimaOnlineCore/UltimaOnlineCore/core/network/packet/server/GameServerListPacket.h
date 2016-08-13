@@ -19,26 +19,26 @@ namespace core {
                 class GameServerListPacket : public ServerPacket {
                 public:
                     GameServerListPacket();
-                    GameServerListPacket(const unsigned char *packetBuffer);
+                    GameServerListPacket(const uint8_t *packetBuffer);
                     ~GameServerListPacket();
                     
                     struct ServerEntry {
-                        unsigned short index;
+                        uint16_t index;
                         char name[32];
-                        char full;
-                        char timezone;
-                        unsigned int address;
+                        uint8_t full;
+                        uint8_t timezone;
+                        uint32_t address;
                     };
                     
                     typedef std::vector<GameServerListPacket::ServerEntry*> ServerEntryList;
                     
                     const ServerEntryList& getServerList();
                     
-                    virtual ServerPacket* clone(const unsigned char *packetBuffer);
+                    virtual ServerPacket* clone(const uint8_t *packetBuffer);
                     
                 private:
                     ServerEntryList _serverList;
-                    unsigned char _flag;
+                    uint8_t _flag;
                 };
             }
         }

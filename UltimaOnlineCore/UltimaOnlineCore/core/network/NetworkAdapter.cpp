@@ -24,10 +24,10 @@ void core::network::NetworkAdapter::clean() {
 
 }
 
-void core::network::NetworkAdapter::parsePacket(unsigned char *buf, unsigned int length) {
-    static unsigned char recvBuf[15000] = {0};
+void core::network::NetworkAdapter::parsePacket(const uint8_t *buf, unsigned int length) {
+    static uint8_t recvBuf[15000] = {0};
     static int recvBufLen = 0;
-    static unsigned char *pnow=recvBuf;
+    static uint8_t *pnow=recvBuf;
     static bool partialPacket = false;
     recvBufLen += length;
     memcpy(pnow, buf, length);

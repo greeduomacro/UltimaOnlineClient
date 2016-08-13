@@ -29,14 +29,14 @@ namespace core {
                     };
                     
                     LoginDeniedPacket();
-                    LoginDeniedPacket(const unsigned char *packetBuffer);
+                    LoginDeniedPacket(const uint8_t *packetBuffer);
                     ~LoginDeniedPacket();
                     
                     Reason getReason();
                     void setReason(Reason reason);
                     const char* getReasonCStr();
                     
-                    virtual ServerPacket* clone(const unsigned char *packetBuffer);
+                    virtual ServerPacket* clone(const uint8_t *packetBuffer);
                     
                 private:
                     Reason _reason;

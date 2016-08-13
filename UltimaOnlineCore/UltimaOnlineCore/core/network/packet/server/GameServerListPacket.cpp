@@ -15,9 +15,9 @@ using namespace core::network::packet::server;
 GameServerListPacket::GameServerListPacket() : ServerPacket(0x82, 0) {
 }
 
-GameServerListPacket::GameServerListPacket(const unsigned char *packetBuffer) : ServerPacket(packetBuffer) {
+GameServerListPacket::GameServerListPacket(const uint8_t *packetBuffer) : ServerPacket(packetBuffer) {
     _flag = this->unpack8(3);
-    unsigned short count = this->unpack16(4);
+    uint16_t count = this->unpack16(4);
     int idx = 6;
     for (int i = 0; i < count; ++i) {
         ServerEntry *entry = (ServerEntry*)malloc(sizeof(ServerEntry));
@@ -45,7 +45,7 @@ const std::vector<GameServerListPacket::ServerEntry*>& GameServerListPacket::get
     return _serverList;
 }
 
-ServerPacket* GameServerListPacket::clone(const unsigned char *packetBuffer) {
+ServerPacket* GameServerListPacket::clone(const uint8_t *packetBuffer) {
     GameServerListPacket *cloned = new GameServerListPacket(packetBuffer);
     return cloned;
 }

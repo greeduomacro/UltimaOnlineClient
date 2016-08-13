@@ -17,12 +17,12 @@ namespace core {
             namespace server {
                 class ServerPacket : public Packet {
                 public:
-                    ServerPacket(unsigned char packetID, unsigned short length);
-                    ServerPacket(const unsigned char *packetBuffer);
+                    ServerPacket(uint8_t packetID, uint16_t length);
+                    ServerPacket(const uint8_t *packetBuffer);
                     virtual ~ServerPacket();
 
-                    static ServerPacket* createPacket(const unsigned char *packetBuffer, unsigned short length);
-                    virtual ServerPacket* clone(const unsigned char *packetBuffer) = 0;
+                    static ServerPacket* createPacket(const uint8_t *packetBuffer, uint16_t length);
+                    virtual ServerPacket* clone(const uint8_t *packetBuffer) = 0;
                 };
             }
         }
