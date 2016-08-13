@@ -22,6 +22,7 @@
 		2F5D7F071D5E602C00B2269C /* ServerPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F5D7F051D5E602C00B2269C /* ServerPacket.cpp */; };
 		2FDB1D301C4A690800565F94 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2FDB1D2F1C4A690800565F94 /* main.mm */; };
 		2FDDB68B1D5FC6B10067E41D /* SelectServerPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FDDB6891D5FC6B10067E41D /* SelectServerPacket.cpp */; };
+		2FDDB68E1D5FC8CD0067E41D /* ConnectToGameServerPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FDDB68C1D5FC8CD0067E41D /* ConnectToGameServerPacket.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -72,6 +73,8 @@
 		2FDB1D2F1C4A690800565F94 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		2FDDB6891D5FC6B10067E41D /* SelectServerPacket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SelectServerPacket.cpp; sourceTree = "<group>"; };
 		2FDDB68A1D5FC6B10067E41D /* SelectServerPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectServerPacket.h; sourceTree = "<group>"; };
+		2FDDB68C1D5FC8CD0067E41D /* ConnectToGameServerPacket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConnectToGameServerPacket.cpp; sourceTree = "<group>"; };
+		2FDDB68D1D5FC8CD0067E41D /* ConnectToGameServerPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectToGameServerPacket.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +208,8 @@
 				2F5D7F051D5E602C00B2269C /* ServerPacket.cpp */,
 				2F5D7F061D5E602C00B2269C /* ServerPacket.h */,
 				2F5D7F011D5E576C00B2269C /* ServerPackets.h */,
+				2FDDB68C1D5FC8CD0067E41D /* ConnectToGameServerPacket.cpp */,
+				2FDDB68D1D5FC8CD0067E41D /* ConnectToGameServerPacket.h */,
 			);
 			name = Server;
 			path = server;
@@ -308,6 +313,7 @@
 				2F5D7EFF1D5CF30A00B2269C /* Log.cpp in Sources */,
 				2FDDB68B1D5FC6B10067E41D /* SelectServerPacket.cpp in Sources */,
 				2F5D7F071D5E602C00B2269C /* ServerPacket.cpp in Sources */,
+				2FDDB68E1D5FC8CD0067E41D /* ConnectToGameServerPacket.cpp in Sources */,
 				2F5D7EFC1D5B72B700B2269C /* Game.cpp in Sources */,
 				2F5D7EC81D52970B00B2269C /* NetworkManager.cpp in Sources */,
 				2F5D7ED91D52B3C100B2269C /* LoginRequestPacket.cpp in Sources */,

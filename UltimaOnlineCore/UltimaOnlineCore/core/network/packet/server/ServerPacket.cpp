@@ -89,7 +89,7 @@ ServerPacket* ServerPacket::createPacket(const uint8_t *packetBuffer, uint16_t l
         {0x86, nullptr},
         {0x88, nullptr},
         {0x89, nullptr},
-        {0x8C, nullptr},
+        {0x8C, new ConnectToGameServerPacket()},
         {0x90, nullptr},
         {0x93, nullptr},
         {0x95, nullptr},
