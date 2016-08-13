@@ -6,8 +6,8 @@
 //  Copyright © 2016 Hercules Junior. All rights reserved.
 //
 
-#ifndef CORE_NETWORK_PACKET_LOGINSEEDPACKET_H
-#define CORE_NETWORK_PACKET_LOGINSEEDPACKET_H
+#ifndef CORE_NETWORK_PACKET_CLIENT_LOGINSEEDPACKET_H
+#define CORE_NETWORK_PACKET_CLIENT_LOGINSEEDPACKET_H
 
 #include "ClientPacket.h"
 
@@ -33,4 +33,4 @@ namespace core {
     }
 }
 
-#endif /* CORE_NETWORK_PACKET_LOGINSEEDPACKET_H */
+#endif /* CORE_NETWORK_PACKET_CLIENT_LOGINSEEDPACKET_H */
