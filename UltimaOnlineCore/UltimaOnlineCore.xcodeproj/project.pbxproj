@@ -25,6 +25,7 @@
 		2FDDB68E1D5FC8CD0067E41D /* ConnectToGameServerPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FDDB68C1D5FC8CD0067E41D /* ConnectToGameServerPacket.cpp */; };
 		2FDDB6911D6142470067E41D /* GameServerLoginPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FDDB68F1D6142470067E41D /* GameServerLoginPacket.cpp */; };
 		2FDDB6941D61EC950067E41D /* EnableFeaturesPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FDDB6921D61EC950067E41D /* EnableFeaturesPacket.cpp */; };
+		2FDDB6971D61FDBC0067E41D /* CharacterListPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FDDB6951D61FDBC0067E41D /* CharacterListPacket.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -81,6 +82,8 @@
 		2FDDB6901D6142470067E41D /* GameServerLoginPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameServerLoginPacket.h; sourceTree = "<group>"; };
 		2FDDB6921D61EC950067E41D /* EnableFeaturesPacket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EnableFeaturesPacket.cpp; sourceTree = "<group>"; };
 		2FDDB6931D61EC950067E41D /* EnableFeaturesPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnableFeaturesPacket.h; sourceTree = "<group>"; };
+		2FDDB6951D61FDBC0067E41D /* CharacterListPacket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CharacterListPacket.cpp; sourceTree = "<group>"; };
+		2FDDB6961D61FDBC0067E41D /* CharacterListPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterListPacket.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +223,8 @@
 				2FDDB68D1D5FC8CD0067E41D /* ConnectToGameServerPacket.h */,
 				2FDDB6921D61EC950067E41D /* EnableFeaturesPacket.cpp */,
 				2FDDB6931D61EC950067E41D /* EnableFeaturesPacket.h */,
+				2FDDB6951D61FDBC0067E41D /* CharacterListPacket.cpp */,
+				2FDDB6961D61FDBC0067E41D /* CharacterListPacket.h */,
 			);
 			name = Server;
 			path = server;
@@ -317,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FDDB6971D61FDBC0067E41D /* CharacterListPacket.cpp in Sources */,
 				2F5D7EF41D580EDA00B2269C /* GameServerListPacket.cpp in Sources */,
 				2F5D7EEC1D5659F000B2269C /* LoginSeedPacket.cpp in Sources */,
 				2F5D7EF11D58095B00B2269C /* LoginDeniedPacket.cpp in Sources */,
