@@ -26,6 +26,7 @@
 		2FDDB6911D6142470067E41D /* GameServerLoginPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FDDB68F1D6142470067E41D /* GameServerLoginPacket.cpp */; };
 		2FDDB6941D61EC950067E41D /* EnableFeaturesPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FDDB6921D61EC950067E41D /* EnableFeaturesPacket.cpp */; };
 		2FDDB6971D61FDBC0067E41D /* CharacterListPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FDDB6951D61FDBC0067E41D /* CharacterListPacket.cpp */; };
+		2FDDB69A1D6232150067E41D /* LoginCharacterPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FDDB6981D6232150067E41D /* LoginCharacterPacket.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -84,6 +85,8 @@
 		2FDDB6931D61EC950067E41D /* EnableFeaturesPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnableFeaturesPacket.h; sourceTree = "<group>"; };
 		2FDDB6951D61FDBC0067E41D /* CharacterListPacket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CharacterListPacket.cpp; sourceTree = "<group>"; };
 		2FDDB6961D61FDBC0067E41D /* CharacterListPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterListPacket.h; sourceTree = "<group>"; };
+		2FDDB6981D6232150067E41D /* LoginCharacterPacket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LoginCharacterPacket.cpp; sourceTree = "<group>"; };
+		2FDDB6991D6232150067E41D /* LoginCharacterPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginCharacterPacket.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +207,8 @@
 				2F5D7F031D5E5A4C00B2269C /* ClientPacket.h */,
 				2FDDB68F1D6142470067E41D /* GameServerLoginPacket.cpp */,
 				2FDDB6901D6142470067E41D /* GameServerLoginPacket.h */,
+				2FDDB6981D6232150067E41D /* LoginCharacterPacket.cpp */,
+				2FDDB6991D6232150067E41D /* LoginCharacterPacket.h */,
 			);
 			name = Client;
 			path = client;
@@ -337,6 +342,7 @@
 				2F5D7F041D5E5A4C00B2269C /* ClientPacket.cpp in Sources */,
 				2FDB1D301C4A690800565F94 /* main.mm in Sources */,
 				2F5D7ED51D52A17500B2269C /* Packet.cpp in Sources */,
+				2FDDB69A1D6232150067E41D /* LoginCharacterPacket.cpp in Sources */,
 				2F5D7EE41D53FCBA00B2269C /* NetworkAdapter.cpp in Sources */,
 				2F5D7EE21D53D70400B2269C /* NetworkAdapteriOS.mm in Sources */,
 				2F5D7EF71D5A7AA400B2269C /* PacketHandler.cpp in Sources */,
