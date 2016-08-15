@@ -116,6 +116,8 @@ namespace core {
                 static unsigned int getPacketLength(uint8_t packetID);
                 static unsigned int getPacketLength(const uint8_t *packetBuffer);
                 static Packet* createPacket(const uint8_t *packetBuffer, uint16_t length);
+                static uint32_t IP2INT(const char* ipAddress);
+                static char* INT2IP(uint32_t ipAddress);
                 
             protected:
                 void createPacketData();

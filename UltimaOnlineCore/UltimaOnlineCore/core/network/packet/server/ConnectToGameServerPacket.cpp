@@ -17,13 +17,7 @@ ConnectToGameServerPacket::ConnectToGameServerPacket() : ServerPacket(0x8C, 0) {
 }
 
 ConnectToGameServerPacket::ConnectToGameServerPacket(const uint8_t *packetBuffer) : ServerPacket(packetBuffer) {
-    _gameServerIP = new char[16];
-    uint32_t ipAddress = this->unpack32(1);
-    sprintf(_gameServerIP, "%d.%d.%d.%d",
-            (ipAddress >> 24) & 0xFF,
-            (ipAddress >> 16) & 0xFF,
-            (ipAddress >>  8) & 0xFF,
-            (ipAddress      ) & 0xFF);
+    _gameServerIP = Packet::INT2IP(this->unpack32(1));
 }
 
 ConnectToGameServerPacket::~ConnectToGameServerPacket() {

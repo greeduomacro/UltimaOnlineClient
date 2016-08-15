@@ -73,7 +73,7 @@
 		2F5D7F031D5E5A4C00B2269C /* ClientPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientPacket.h; sourceTree = "<group>"; };
 		2F5D7F051D5E602C00B2269C /* ServerPacket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ServerPacket.cpp; sourceTree = "<group>"; };
 		2F5D7F061D5E602C00B2269C /* ServerPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerPacket.h; sourceTree = "<group>"; };
-		2FDB1D2C1C4A690800565F94 /* UltimaOnlineCore */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = UltimaOnlineCore; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FDB1D2C1C4A690800565F94 /* UltimaOnlineClient */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = UltimaOnlineClient; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FDB1D2F1C4A690800565F94 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		2FDDB6891D5FC6B10067E41D /* SelectServerPacket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SelectServerPacket.cpp; sourceTree = "<group>"; };
 		2FDDB68A1D5FC6B10067E41D /* SelectServerPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectServerPacket.h; sourceTree = "<group>"; };
@@ -256,7 +256,7 @@
 		2FDB1D2D1C4A690800565F94 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2FDB1D2C1C4A690800565F94 /* UltimaOnlineCore */,
+				2FDB1D2C1C4A690800565F94 /* UltimaOnlineClient */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -274,9 +274,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2FDB1D2B1C4A690800565F94 /* UltimaOnlineCore */ = {
+		2FDB1D2B1C4A690800565F94 /* UltimaOnlineTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2FDB1D331C4A690800565F94 /* Build configuration list for PBXNativeTarget "UltimaOnlineCore" */;
+			buildConfigurationList = 2FDB1D331C4A690800565F94 /* Build configuration list for PBXNativeTarget "UltimaOnlineTest" */;
 			buildPhases = (
 				2FDB1D281C4A690800565F94 /* Sources */,
 				2FDB1D291C4A690800565F94 /* Frameworks */,
@@ -286,9 +286,9 @@
 			);
 			dependencies = (
 			);
-			name = UltimaOnlineCore;
+			name = UltimaOnlineTest;
 			productName = UltimaOnlineCore;
-			productReference = 2FDB1D2C1C4A690800565F94 /* UltimaOnlineCore */;
+			productReference = 2FDB1D2C1C4A690800565F94 /* UltimaOnlineClient */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -305,7 +305,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2FDB1D271C4A690800565F94 /* Build configuration list for PBXProject "UltimaOnlineCore" */;
+			buildConfigurationList = 2FDB1D271C4A690800565F94 /* Build configuration list for PBXProject "UltimaOnlineClient" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -317,7 +317,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2FDB1D2B1C4A690800565F94 /* UltimaOnlineCore */,
+				2FDB1D2B1C4A690800565F94 /* UltimaOnlineTest */,
 			);
 		};
 /* End PBXProject section */
@@ -435,21 +435,21 @@
 		2FDB1D341C4A690800565F94 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = UltimaOnlineClient;
 			};
 			name = Debug;
 		};
 		2FDB1D351C4A690800565F94 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = UltimaOnlineClient;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2FDB1D271C4A690800565F94 /* Build configuration list for PBXProject "UltimaOnlineCore" */ = {
+		2FDB1D271C4A690800565F94 /* Build configuration list for PBXProject "UltimaOnlineClient" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2FDB1D311C4A690800565F94 /* Debug */,
@@ -458,7 +458,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2FDB1D331C4A690800565F94 /* Build configuration list for PBXNativeTarget "UltimaOnlineCore" */ = {
+		2FDB1D331C4A690800565F94 /* Build configuration list for PBXNativeTarget "UltimaOnlineTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2FDB1D341C4A690800565F94 /* Debug */,

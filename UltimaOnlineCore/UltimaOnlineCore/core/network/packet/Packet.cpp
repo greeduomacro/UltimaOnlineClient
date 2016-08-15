@@ -405,3 +405,24 @@ const char* Packet::getPacketName(uint8_t packetID) {
     };
     return packetNames[packetID];
 }
+
+uint32_t Packet::IP2INT(const char* ipAddress) {
+    uint32_t ip = 0;
+    int i = 0;
+    char *p = strtok((char*)ipAddress, ".");
+    while (p) {
+        int i_dec = atoi(p);
+        ip |= i_dec << 8*i++;
+        p = strtok(NULL, ".");
+    }
+    return ip;
+}
+char* Packet::INT2IP(uint32_t ipAddress) {
+    char *ip = new char[16];
+    sprintf(ip, "%d.%d.%d.%d",
+            (ipAddress      ) & 0xFF,
+            (ipAddress >>  8) & 0xFF,
+            (ipAddress >> 16) & 0xFF,
+            (ipAddress >> 24) & 0xFF);
+    return ip;
+}

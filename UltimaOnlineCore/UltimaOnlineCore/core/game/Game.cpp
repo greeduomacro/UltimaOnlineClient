@@ -45,7 +45,7 @@ bool Game::handleLoginDenied(core::network::packet::server::ServerPacket &packet
 
 bool Game::handleGameServerList(core::network::packet::server::ServerPacket &packet) {
     for (auto &i : ((GameServerListPacket&)packet).getServerList()) {
-        LOG_DEBUG("Server[%d]: %s, %s\n", i->index, i->name, i->full!=0 ? "full":"empty");
+        LOG_DEBUG("Server[%d]: %s, %s\n", i->index, i->name, Packet::INT2IP(i->address));
     }
     return true;
 }

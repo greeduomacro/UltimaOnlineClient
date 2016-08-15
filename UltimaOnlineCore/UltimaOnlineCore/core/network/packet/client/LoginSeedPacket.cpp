@@ -23,14 +23,8 @@ LoginSeedPacket::~LoginSeedPacket() {
 
 void LoginSeedPacket::buildPacket() {
     Packet::initPacket(false);
-    
-    int i = 0;
-    char *p = strtok(_ipAddress, ".");
-    while (p) {
-        int i_dec = atoi(p);
-        this->pack8(i++, i_dec);
-        p = strtok(NULL, ".");
-    }
+    uint32_t ip = Packet::IP2INT(_ipAddress);
+    this->pack32(0, ip);
 }
 
 const char* LoginSeedPacket::getIPAddress() {
