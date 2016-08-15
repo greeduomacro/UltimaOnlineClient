@@ -24,6 +24,7 @@
 		2FDDB68B1D5FC6B10067E41D /* SelectServerPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FDDB6891D5FC6B10067E41D /* SelectServerPacket.cpp */; };
 		2FDDB68E1D5FC8CD0067E41D /* ConnectToGameServerPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FDDB68C1D5FC8CD0067E41D /* ConnectToGameServerPacket.cpp */; };
 		2FDDB6911D6142470067E41D /* GameServerLoginPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FDDB68F1D6142470067E41D /* GameServerLoginPacket.cpp */; };
+		2FDDB6941D61EC950067E41D /* EnableFeaturesPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FDDB6921D61EC950067E41D /* EnableFeaturesPacket.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -78,6 +79,8 @@
 		2FDDB68D1D5FC8CD0067E41D /* ConnectToGameServerPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectToGameServerPacket.h; sourceTree = "<group>"; };
 		2FDDB68F1D6142470067E41D /* GameServerLoginPacket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameServerLoginPacket.cpp; sourceTree = "<group>"; };
 		2FDDB6901D6142470067E41D /* GameServerLoginPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameServerLoginPacket.h; sourceTree = "<group>"; };
+		2FDDB6921D61EC950067E41D /* EnableFeaturesPacket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EnableFeaturesPacket.cpp; sourceTree = "<group>"; };
+		2FDDB6931D61EC950067E41D /* EnableFeaturesPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnableFeaturesPacket.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +218,8 @@
 				2F5D7F011D5E576C00B2269C /* ServerPackets.h */,
 				2FDDB68C1D5FC8CD0067E41D /* ConnectToGameServerPacket.cpp */,
 				2FDDB68D1D5FC8CD0067E41D /* ConnectToGameServerPacket.h */,
+				2FDDB6921D61EC950067E41D /* EnableFeaturesPacket.cpp */,
+				2FDDB6931D61EC950067E41D /* EnableFeaturesPacket.h */,
 			);
 			name = Server;
 			path = server;
@@ -329,6 +334,7 @@
 				2F5D7EE41D53FCBA00B2269C /* NetworkAdapter.cpp in Sources */,
 				2F5D7EE21D53D70400B2269C /* NetworkAdapteriOS.mm in Sources */,
 				2F5D7EF71D5A7AA400B2269C /* PacketHandler.cpp in Sources */,
+				2FDDB6941D61EC950067E41D /* EnableFeaturesPacket.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

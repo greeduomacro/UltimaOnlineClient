@@ -114,7 +114,7 @@ ServerPacket* ServerPacket::createPacket(const uint8_t *packetBuffer, uint16_t l
         {0xB2, nullptr},
         {0xB7, nullptr},
         {0xB8, nullptr},
-        {0xB9, nullptr},
+        {0xB9, new EnableFeaturesPacket()},
         {0xBA, nullptr},
         {0xBB, nullptr},
         {0xBC, nullptr},

@@ -13,5 +13,6 @@
 #include "LoginDeniedPacket.h"          /* 0x82 */
 #include "ConnectToGameServerPacket.h"  /* 0x8C */
 #include "GameServerListPacket.h"       /* 0xA8 */
+#include "EnableFeaturesPacket.h"       /* 0xB9 */
 
 #endif /* CORE_NETWORK_PACKET_SERVER_SERVERPACKETS_H */
