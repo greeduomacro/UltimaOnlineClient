@@ -16,7 +16,7 @@ void core::log::Log::printPacket(bool isReceiving, const uint8_t* packetBuffer, 
     tm *ltm = localtime(&now);
     int actLine = 0, actRow = 0;
     
-    printf("[%04d-%02d-%02d %02d:%02d:%02d] ", ltm->tm_year, ltm->tm_mon, ltm->tm_mday, ltm->tm_hour, ltm->tm_min, ltm->tm_sec);
+    printf("[%02d-%02d-%02d %02d:%02d:%02d] ", ltm->tm_year, ltm->tm_mon, ltm->tm_mday, ltm->tm_hour, ltm->tm_min, ltm->tm_sec);
     if (isReceiving) {
         printf("[Server->Client] ");
     } else {
@@ -26,10 +26,10 @@ void core::log::Log::printPacket(bool isReceiving, const uint8_t* packetBuffer, 
     printf("       0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F\n");
     printf("      -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --\n");
     for(actLine = 0; actLine < (length / 16) + 1; actLine++) {
-        printf("%04x: ", actLine * 16);
+        printf("%04X: ", actLine * 16);
         for(actRow = 0; actRow < 16; actRow++) {
             if(actLine * 16 + actRow < length) {
-                printf("%02x ", (unsigned int)((uint8_t)packetBuffer[actLine * 16 + actRow]));
+                printf("%02X ", (unsigned int)((uint8_t)packetBuffer[actLine * 16 + actRow]));
             } else {
                 printf("-- ");
             }

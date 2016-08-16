@@ -417,12 +417,25 @@ uint32_t Packet::IP2INT(const char* ipAddress) {
     }
     return ip;
 }
-char* Packet::INT2IP(uint32_t ipAddress) {
+
+char* Packet::INT2IP(uint32_t ipAddress, bool bigEndian) {
     char *ip = new char[16];
-    sprintf(ip, "%d.%d.%d.%d",
-            (ipAddress      ) & 0xFF,
-            (ipAddress >>  8) & 0xFF,
-            (ipAddress >> 16) & 0xFF,
-            (ipAddress >> 24) & 0xFF);
+    if (bigEndian) {
+        sprintf(ip, "%d.%d.%d.%d",
+                (ipAddress      ) & 0xFF,
+                (ipAddress >>  8) & 0xFF,
+                (ipAddress >> 16) & 0xFF,
+                (ipAddress >> 24) & 0xFF);
+    } else {
+        sprintf(ip, "%d.%d.%d.%d",
+                (ipAddress >> 24) & 0xFF,
+                (ipAddress >> 16) & 0xFF,
+                (ipAddress >>  8) & 0xFF,
+                (ipAddress      ) & 0xFF);
+    }
     return ip;
+}
+
+char* Packet::INT2IP(uint32_t ipAddress) {
+    return Packet::INT2IP(ipAddress, true);
 }

@@ -23,6 +23,7 @@ namespace core {
             //Handlers
             bool handleLoginDenied(core::network::packet::server::ServerPacket &packet);
             bool handleGameServerList(core::network::packet::server::ServerPacket &packet);
+            bool handleConnectToGameServerPacketHandler(core::network::packet::server::ServerPacket &packet);
         };
     }
 }

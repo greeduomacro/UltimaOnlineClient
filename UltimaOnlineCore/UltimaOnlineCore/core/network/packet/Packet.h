@@ -118,6 +118,7 @@ namespace core {
                 static Packet* createPacket(const uint8_t *packetBuffer, uint16_t length);
                 static uint32_t IP2INT(const char* ipAddress);
                 static char* INT2IP(uint32_t ipAddress);
+                static char* INT2IP(uint32_t ipAddress, bool bigEndian);
                 
             protected:
                 void createPacketData();

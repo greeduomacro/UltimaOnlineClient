@@ -22,12 +22,11 @@ int main(int argc, const char * argv[]) {
     core::network::NetworkManager &networkManager = core::network::NetworkManager::getInstance();
     core::game::Game &game = core::game::Game::getInstance();
     if (networkManager.connect("10.0.1.11", 2593)) {
-        LoginSeedPacket loginSeed("127.0.0.1");
+        LoginSeedPacket loginSeed("161.22.60.40");
         networkManager.send(loginSeed);
         LoginRequestPacket loginRequest("admin", "admin");
         networkManager.send(loginRequest);
     }
-//    CFRunLoopRun();
     std::cin.ignore(std::cin.rdbuf()->in_avail()+1);
     return 0;
 }

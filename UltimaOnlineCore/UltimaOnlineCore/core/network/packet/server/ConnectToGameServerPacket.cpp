@@ -17,7 +17,9 @@ ConnectToGameServerPacket::ConnectToGameServerPacket() : ServerPacket(0x8C, 0) {
 }
 
 ConnectToGameServerPacket::ConnectToGameServerPacket(const uint8_t *packetBuffer) : ServerPacket(packetBuffer) {
-    _gameServerIP = Packet::INT2IP(this->unpack32(1));
+    _gameServerIP = Packet::INT2IP(this->unpack32(1), false);
+    _gameServerPort = this->unpack16(5);
+    _gameServerKey = this->unpack16(7);
 }
 
 ConnectToGameServerPacket::~ConnectToGameServerPacket() {

@@ -9,6 +9,7 @@
 #include "NetworkAdapteriOS.h"
 #include "LoginRequestPacket.h"
 #include "NetworkManager.h"
+#include "Log.h"
 
 static CFReadStreamRef *readStream;
 static CFWriteStreamRef *writeStream;
@@ -24,6 +25,8 @@ static void readCallBack(CFReadStreamRef stream, CFStreamEventType event, void *
             int len = (int)CFReadStreamRead(stream, buf, NETWORK_BUFSIZE);
             while (len > 0) {
                 core::network::NetworkAdapter::getInstance()->parsePacket(buf, len);
+                if (len < NETWORK_BUFSIZE)
+                    break;
                 len = (int)CFReadStreamRead(stream, buf, NETWORK_BUFSIZE);
             }
             break;
@@ -114,7 +117,9 @@ bool core::platforms::NetworkAdapteriOS::connect(const char* host, unsigned int 
 }
 
 bool core::platforms::NetworkAdapteriOS::send(const unsigned char* bytes, unsigned int length) {
-    dispatch_sync(networkQueue, ^{
+    static dispatch_queue_t queue = dispatch_queue_create("Network Send", DISPATCH_QUEUE_SERIAL);
+    dispatch_sync(queue, ^{
+        log::Log::printPacket(false, bytes, length);
         CFWriteStreamWrite(_writeStream, bytes, length);
     });
     return true;

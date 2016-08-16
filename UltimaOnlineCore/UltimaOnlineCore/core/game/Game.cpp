@@ -11,6 +11,7 @@
 #include "PacketHandler.h"
 #include "Log.h"
 #include "ServerPackets.h"
+#include "SelectServerPacket.h"
 
 using namespace core::game;
 using namespace core::network;
@@ -29,6 +30,9 @@ Game::Game() {
     
     PacketHandler<Game> *gameServerListPacketHandler = new PacketHandler<Game>(*this, &Game::handleGameServerList);
     network::NetworkManager::getInstance().registerPacketHandler(NetworkManager::HandlerQueue::System, 0xA8, *gameServerListPacketHandler);
+    
+    PacketHandler<Game> *connectToGameServerPacketHandler = new PacketHandler<Game>(*this, &Game::handleConnectToGameServerPacketHandler);
+    network::NetworkManager::getInstance().registerPacketHandler(NetworkManager::HandlerQueue::System, 0x8C, *connectToGameServerPacketHandler);
 }
 
 Game::~Game() {
@@ -47,5 +51,13 @@ bool Game::handleGameServerList(core::network::packet::server::ServerPacket &pac
     for (auto &i : ((GameServerListPacket&)packet).getServerList()) {
         LOG_DEBUG("Server[%d]: %s, %s\n", i->index, i->name, Packet::INT2IP(i->address));
     }
+    network::NetworkManager::getInstance().send(*new packet::client::SelectServerPacket(1));
+    
+    return true;
+}
+
+bool Game::handleConnectToGameServerPacketHandler(core::network::packet::server::ServerPacket &packet) {
+    ConnectToGameServerPacket &p = (ConnectToGameServerPacket&)packet;
+    LOG_DEBUG("[CONNECT TO] %s:%d - %X", p.getGameServerIP(), p.getGameServerPort(), p.getGameServerKey());
     return true;
 }

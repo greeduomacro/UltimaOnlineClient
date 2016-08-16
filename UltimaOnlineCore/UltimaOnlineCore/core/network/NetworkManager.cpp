@@ -44,7 +44,6 @@ bool core::network::NetworkManager::connect(const char* host, int port) {
 
 bool core::network::NetworkManager::send(core::network::packet::client::ClientPacket& packet) {
     packet.buildPacket();
-    log::Log::printPacket(false, packet.getData(), packet.getLength());
     _adapter->send(packet.getData(), packet.getLength());
     return true;
 }
