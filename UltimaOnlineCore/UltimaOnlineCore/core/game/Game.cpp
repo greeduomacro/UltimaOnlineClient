@@ -12,6 +12,7 @@
 #include "Log.h"
 #include "ServerPackets.h"
 #include "SelectServerPacket.h"
+#include "GameServerLoginPacket.h"
 
 using namespace core::game;
 using namespace core::network;
@@ -58,6 +59,7 @@ bool Game::handleGameServerList(core::network::packet::server::ServerPacket &pac
 
 bool Game::handleConnectToGameServerPacketHandler(core::network::packet::server::ServerPacket &packet) {
     ConnectToGameServerPacket &p = (ConnectToGameServerPacket&)packet;
-    LOG_DEBUG("[CONNECT TO] %s:%d - %X", p.getGameServerIP(), p.getGameServerPort(), p.getGameServerKey());
+    LOG_DEBUG("[CONNECT TO] %s:%d - %X\n", p.getGameServerIP(), p.getGameServerPort(), p.getGameServerKey());
+    network::NetworkManager::getInstance().send(*new packet::client::GameServerLoginPacket("admin", "admin", p.getGameServerKey()));
     return true;
 }

@@ -12,6 +12,7 @@
 #include <thread>
 #include <mutex>
 #include <condition_variable>
+#include "UOHuffman.h"
 
 #define NETWORK_BUFSIZE 1000
 
@@ -34,6 +35,7 @@ namespace core {
             NetworkAdapter();
             std::mutex mtx;             // mutex for critical section
             std::condition_variable cv;
+            HuffmanObj huffmanObj;
         };
     }
 }

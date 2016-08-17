@@ -10,6 +10,9 @@
 #include "NetworkAdapteriOS.h"
 #include "Packet.h"
 #include "NetworkManager.h"
+#include "Log.h"
+
+#define MIN_DECBUF_SIZE(in) ((in * 4) + 4)
 
 core::network::NetworkAdapter* core::network::NetworkAdapter::getInstance() {
     static platforms::NetworkAdapteriOS instance;
@@ -18,6 +21,7 @@ core::network::NetworkAdapter* core::network::NetworkAdapter::getInstance() {
 
 core::network::NetworkAdapter::NetworkAdapter() {
     _connected = false;
+    DecompressClean(&huffmanObj);
 }
 
 void core::network::NetworkAdapter::clean() {
@@ -29,8 +33,24 @@ void core::network::NetworkAdapter::parsePacket(const uint8_t *buf, unsigned int
     static int recvBufLen = 0;
     static uint8_t *pnow=recvBuf;
     static bool partialPacket = false;
-    recvBufLen += length;
-    memcpy(pnow, buf, length);
+    static int i = 2;
+    int outbyt = 0;
+    int l = length;
+    if (i-- <= 0) {
+        char *dcbuf = (char *)malloc(MIN_DECBUF_SIZE(length));
+        Decompress(dcbuf, (char*)buf, &outbyt, &l, &huffmanObj); // Descomprimir
+        memcpy((char*)buf, dcbuf, outbyt); // Copiar buf descomprimido
+        free(dcbuf); // Liberar buf descomprimido
+        
+        log::Log::printInfo("[parsePacket::HUFFMAN] Decompressed %u bytes into %u bytes\n", l, outbyt);
+        recvBufLen += outbyt;
+        memcpy(pnow, buf, outbyt);
+    } else {
+        recvBufLen += length;
+        memcpy(pnow, buf, length);
+    }
+    
+    
     int len = packet::Packet::getPacketLength(pnow);
     if (recvBufLen != len) {
         while(!partialPacket) {
