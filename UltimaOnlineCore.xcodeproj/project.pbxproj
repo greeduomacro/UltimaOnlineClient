@@ -1,0 +1,552 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		2F6B4AEA1D6DCB6C001A0D9A /* UltimaOnlineCore-Universal */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 2F6B4AEB1D6DCB6C001A0D9A /* Build configuration list for PBXAggregateTarget "UltimaOnlineCore-Universal" */;
+			buildPhases = (
+				2F6B4AEE1D6DCBA0001A0D9A /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "UltimaOnlineCore-Universal";
+			productName = "UltimaOnlineCore-Universal";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		2F6B4AD51D6DC831001A0D9A /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F6B4AA01D6DC831001A0D9A /* Game.cpp */; };
+		2F6B4AD61D6DC831001A0D9A /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F6B4AA31D6DC831001A0D9A /* Log.cpp */; };
+		2F6B4AD71D6DC831001A0D9A /* NetworkAdapter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F6B4AA61D6DC831001A0D9A /* NetworkAdapter.cpp */; };
+		2F6B4AD81D6DC831001A0D9A /* NetworkManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F6B4AA81D6DC831001A0D9A /* NetworkManager.cpp */; };
+		2F6B4AD91D6DC831001A0D9A /* ClientPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F6B4AAC1D6DC831001A0D9A /* ClientPacket.cpp */; };
+		2F6B4ADA1D6DC831001A0D9A /* GameServerLoginPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F6B4AAE1D6DC831001A0D9A /* GameServerLoginPacket.cpp */; };
+		2F6B4ADB1D6DC831001A0D9A /* LoginCharacterPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F6B4AB01D6DC831001A0D9A /* LoginCharacterPacket.cpp */; };
+		2F6B4ADC1D6DC831001A0D9A /* LoginRequestPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F6B4AB21D6DC831001A0D9A /* LoginRequestPacket.cpp */; };
+		2F6B4ADD1D6DC831001A0D9A /* LoginSeedPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F6B4AB41D6DC831001A0D9A /* LoginSeedPacket.cpp */; };
+		2F6B4ADE1D6DC831001A0D9A /* SelectServerPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F6B4AB61D6DC831001A0D9A /* SelectServerPacket.cpp */; };
+		2F6B4ADF1D6DC831001A0D9A /* Packet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F6B4AB91D6DC831001A0D9A /* Packet.cpp */; };
+		2F6B4AE01D6DC831001A0D9A /* PacketHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F6B4ABB1D6DC831001A0D9A /* PacketHandler.cpp */; };
+		2F6B4AE11D6DC831001A0D9A /* CharacterListPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F6B4ABE1D6DC831001A0D9A /* CharacterListPacket.cpp */; };
+		2F6B4AE21D6DC831001A0D9A /* ConnectToGameServerPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F6B4AC01D6DC831001A0D9A /* ConnectToGameServerPacket.cpp */; };
+		2F6B4AE31D6DC831001A0D9A /* EnableFeaturesPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F6B4AC21D6DC831001A0D9A /* EnableFeaturesPacket.cpp */; };
+		2F6B4AE41D6DC831001A0D9A /* GameServerListPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F6B4AC41D6DC831001A0D9A /* GameServerListPacket.cpp */; };
+		2F6B4AE51D6DC831001A0D9A /* LoginDeniedPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F6B4AC61D6DC831001A0D9A /* LoginDeniedPacket.cpp */; };
+		2F6B4AE61D6DC831001A0D9A /* ServerPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F6B4AC81D6DC831001A0D9A /* ServerPacket.cpp */; };
+		2F6B4AE71D6DC831001A0D9A /* UOHuffman.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F6B4ACB1D6DC831001A0D9A /* UOHuffman.cpp */; };
+		2F6B4AE81D6DC831001A0D9A /* NetworkAdapteriOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2F6B4AD01D6DC831001A0D9A /* NetworkAdapteriOS.mm */; };
+		2F6B4AE91D6DC831001A0D9A /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2F6B4AD41D6DC831001A0D9A /* main.mm */; };
+		2F6B4B051D6DCCCF001A0D9A /* Game.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6B4AA11D6DC831001A0D9A /* Game.h */; };
+		2F6B4B061D6DCCCF001A0D9A /* Log.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6B4AA41D6DC831001A0D9A /* Log.h */; };
+		2F6B4B071D6DCCCF001A0D9A /* NetworkManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6B4AA91D6DC831001A0D9A /* NetworkManager.h */; };
+		2F6B4B081D6DCCCF001A0D9A /* ClientPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6B4AAD1D6DC831001A0D9A /* ClientPacket.h */; };
+		2F6B4B091D6DCCCF001A0D9A /* GameServerLoginPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6B4AAF1D6DC831001A0D9A /* GameServerLoginPacket.h */; };
+		2F6B4B0A1D6DCCCF001A0D9A /* LoginCharacterPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6B4AB11D6DC831001A0D9A /* LoginCharacterPacket.h */; };
+		2F6B4B0B1D6DCCCF001A0D9A /* LoginRequestPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6B4AB31D6DC831001A0D9A /* LoginRequestPacket.h */; };
+		2F6B4B0C1D6DCCCF001A0D9A /* LoginSeedPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6B4AB51D6DC831001A0D9A /* LoginSeedPacket.h */; };
+		2F6B4B0D1D6DCCCF001A0D9A /* SelectServerPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6B4AB71D6DC831001A0D9A /* SelectServerPacket.h */; };
+		2F6B4B0E1D6DCCCF001A0D9A /* IPacketHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6B4AB81D6DC831001A0D9A /* IPacketHandler.h */; };
+		2F6B4B0F1D6DCCCF001A0D9A /* Packet.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6B4ABA1D6DC831001A0D9A /* Packet.h */; };
+		2F6B4B101D6DCCCF001A0D9A /* PacketHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6B4ABC1D6DC831001A0D9A /* PacketHandler.h */; };
+		2F6B4B111D6DCCCF001A0D9A /* CharacterListPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6B4ABF1D6DC831001A0D9A /* CharacterListPacket.h */; };
+		2F6B4B121D6DCCCF001A0D9A /* EnableFeaturesPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6B4AC31D6DC831001A0D9A /* EnableFeaturesPacket.h */; };
+		2F6B4B131D6DCCCF001A0D9A /* GameServerListPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6B4AC51D6DC831001A0D9A /* GameServerListPacket.h */; };
+		2F6B4B141D6DCCCF001A0D9A /* LoginDeniedPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6B4AC71D6DC831001A0D9A /* LoginDeniedPacket.h */; };
+		2F6B4B151D6DCCCF001A0D9A /* ServerPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6B4AC91D6DC831001A0D9A /* ServerPacket.h */; };
+		2F6B4B161D6DCCCF001A0D9A /* ServerPackets.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6B4ACA1D6DC831001A0D9A /* ServerPackets.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2F6B4A8D1D6DC7B6001A0D9A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2F6B4A8F1D6DC7B6001A0D9A /* libUltimaOnlineCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUltimaOnlineCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F6B4AA01D6DC831001A0D9A /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		2F6B4AA11D6DC831001A0D9A /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		2F6B4AA31D6DC831001A0D9A /* Log.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Log.cpp; sourceTree = "<group>"; };
+		2F6B4AA41D6DC831001A0D9A /* Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Log.h; sourceTree = "<group>"; };
+		2F6B4AA61D6DC831001A0D9A /* NetworkAdapter.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; path = NetworkAdapter.cpp; sourceTree = "<group>"; };
+		2F6B4AA71D6DC831001A0D9A /* NetworkAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkAdapter.h; sourceTree = "<group>"; };
+		2F6B4AA81D6DC831001A0D9A /* NetworkManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetworkManager.cpp; sourceTree = "<group>"; };
+		2F6B4AA91D6DC831001A0D9A /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		2F6B4AAC1D6DC831001A0D9A /* ClientPacket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ClientPacket.cpp; sourceTree = "<group>"; };
+		2F6B4AAD1D6DC831001A0D9A /* ClientPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientPacket.h; sourceTree = "<group>"; };
+		2F6B4AAE1D6DC831001A0D9A /* GameServerLoginPacket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameServerLoginPacket.cpp; sourceTree = "<group>"; };
+		2F6B4AAF1D6DC831001A0D9A /* GameServerLoginPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameServerLoginPacket.h; sourceTree = "<group>"; };
+		2F6B4AB01D6DC831001A0D9A /* LoginCharacterPacket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LoginCharacterPacket.cpp; sourceTree = "<group>"; };
+		2F6B4AB11D6DC831001A0D9A /* LoginCharacterPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginCharacterPacket.h; sourceTree = "<group>"; };
+		2F6B4AB21D6DC831001A0D9A /* LoginRequestPacket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LoginRequestPacket.cpp; sourceTree = "<group>"; };
+		2F6B4AB31D6DC831001A0D9A /* LoginRequestPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRequestPacket.h; sourceTree = "<group>"; };
+		2F6B4AB41D6DC831001A0D9A /* LoginSeedPacket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LoginSeedPacket.cpp; sourceTree = "<group>"; };
+		2F6B4AB51D6DC831001A0D9A /* LoginSeedPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginSeedPacket.h; sourceTree = "<group>"; };
+		2F6B4AB61D6DC831001A0D9A /* SelectServerPacket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SelectServerPacket.cpp; sourceTree = "<group>"; };
+		2F6B4AB71D6DC831001A0D9A /* SelectServerPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectServerPacket.h; sourceTree = "<group>"; };
+		2F6B4AB81D6DC831001A0D9A /* IPacketHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPacketHandler.h; sourceTree = "<group>"; };
+		2F6B4AB91D6DC831001A0D9A /* Packet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Packet.cpp; sourceTree = "<group>"; };
+		2F6B4ABA1D6DC831001A0D9A /* Packet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Packet.h; sourceTree = "<group>"; };
+		2F6B4ABB1D6DC831001A0D9A /* PacketHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PacketHandler.cpp; sourceTree = "<group>"; };
+		2F6B4ABC1D6DC831001A0D9A /* PacketHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PacketHandler.h; sourceTree = "<group>"; };
+		2F6B4ABE1D6DC831001A0D9A /* CharacterListPacket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CharacterListPacket.cpp; sourceTree = "<group>"; };
+		2F6B4ABF1D6DC831001A0D9A /* CharacterListPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterListPacket.h; sourceTree = "<group>"; };
+		2F6B4AC01D6DC831001A0D9A /* ConnectToGameServerPacket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConnectToGameServerPacket.cpp; sourceTree = "<group>"; };
+		2F6B4AC11D6DC831001A0D9A /* ConnectToGameServerPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectToGameServerPacket.h; sourceTree = "<group>"; };
+		2F6B4AC21D6DC831001A0D9A /* EnableFeaturesPacket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EnableFeaturesPacket.cpp; sourceTree = "<group>"; };
+		2F6B4AC31D6DC831001A0D9A /* EnableFeaturesPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnableFeaturesPacket.h; sourceTree = "<group>"; };
+		2F6B4AC41D6DC831001A0D9A /* GameServerListPacket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameServerListPacket.cpp; sourceTree = "<group>"; };
+		2F6B4AC51D6DC831001A0D9A /* GameServerListPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameServerListPacket.h; sourceTree = "<group>"; };
+		2F6B4AC61D6DC831001A0D9A /* LoginDeniedPacket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LoginDeniedPacket.cpp; sourceTree = "<group>"; };
+		2F6B4AC71D6DC831001A0D9A /* LoginDeniedPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginDeniedPacket.h; sourceTree = "<group>"; };
+		2F6B4AC81D6DC831001A0D9A /* ServerPacket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ServerPacket.cpp; sourceTree = "<group>"; };
+		2F6B4AC91D6DC831001A0D9A /* ServerPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerPacket.h; sourceTree = "<group>"; };
+		2F6B4ACA1D6DC831001A0D9A /* ServerPackets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerPackets.h; sourceTree = "<group>"; };
+		2F6B4ACB1D6DC831001A0D9A /* UOHuffman.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UOHuffman.cpp; sourceTree = "<group>"; };
+		2F6B4ACC1D6DC831001A0D9A /* UOHuffman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UOHuffman.h; sourceTree = "<group>"; };
+		2F6B4ACD1D6DC831001A0D9A /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
+		2F6B4ACF1D6DC831001A0D9A /* NetworkAdapteriOS.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = NetworkAdapteriOS.h; sourceTree = "<group>"; };
+		2F6B4AD01D6DC831001A0D9A /* NetworkAdapteriOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NetworkAdapteriOS.mm; sourceTree = "<group>"; };
+		2F6B4AD11D6DC831001A0D9A /* SkillLock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillLock.h; sourceTree = "<group>"; };
+		2F6B4AD21D6DC831001A0D9A /* SkillName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillName.h; sourceTree = "<group>"; };
+		2F6B4AD31D6DC831001A0D9A /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
+		2F6B4AD41D6DC831001A0D9A /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2F6B4A8C1D6DC7B6001A0D9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2F6B4A861D6DC7B6001A0D9A = {
+			isa = PBXGroup;
+			children = (
+				2F6B4A911D6DC7B6001A0D9A /* UltimaOnlineCore */,
+				2F6B4A901D6DC7B6001A0D9A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2F6B4A901D6DC7B6001A0D9A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2F6B4A8F1D6DC7B6001A0D9A /* libUltimaOnlineCore.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2F6B4A911D6DC7B6001A0D9A /* UltimaOnlineCore */ = {
+			isa = PBXGroup;
+			children = (
+				2F6B4A9E1D6DC831001A0D9A /* core */,
+				2F6B4AD41D6DC831001A0D9A /* main.mm */,
+			);
+			path = UltimaOnlineCore;
+			sourceTree = "<group>";
+		};
+		2F6B4A9E1D6DC831001A0D9A /* core */ = {
+			isa = PBXGroup;
+			children = (
+				2F6B4A9F1D6DC831001A0D9A /* game */,
+				2F6B4AA21D6DC831001A0D9A /* log */,
+				2F6B4AA51D6DC831001A0D9A /* network */,
+				2F6B4ACD1D6DC831001A0D9A /* Object.h */,
+				2F6B4ACE1D6DC831001A0D9A /* platform-specific */,
+				2F6B4AD11D6DC831001A0D9A /* SkillLock.h */,
+				2F6B4AD21D6DC831001A0D9A /* SkillName.h */,
+				2F6B4AD31D6DC831001A0D9A /* Types.h */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		2F6B4A9F1D6DC831001A0D9A /* game */ = {
+			isa = PBXGroup;
+			children = (
+				2F6B4AA01D6DC831001A0D9A /* Game.cpp */,
+				2F6B4AA11D6DC831001A0D9A /* Game.h */,
+			);
+			path = game;
+			sourceTree = "<group>";
+		};
+		2F6B4AA21D6DC831001A0D9A /* log */ = {
+			isa = PBXGroup;
+			children = (
+				2F6B4AA31D6DC831001A0D9A /* Log.cpp */,
+				2F6B4AA41D6DC831001A0D9A /* Log.h */,
+			);
+			path = log;
+			sourceTree = "<group>";
+		};
+		2F6B4AA51D6DC831001A0D9A /* network */ = {
+			isa = PBXGroup;
+			children = (
+				2F6B4AA61D6DC831001A0D9A /* NetworkAdapter.cpp */,
+				2F6B4AA71D6DC831001A0D9A /* NetworkAdapter.h */,
+				2F6B4AA81D6DC831001A0D9A /* NetworkManager.cpp */,
+				2F6B4AA91D6DC831001A0D9A /* NetworkManager.h */,
+				2F6B4AAA1D6DC831001A0D9A /* packet */,
+				2F6B4ACB1D6DC831001A0D9A /* UOHuffman.cpp */,
+				2F6B4ACC1D6DC831001A0D9A /* UOHuffman.h */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
+		2F6B4AAA1D6DC831001A0D9A /* packet */ = {
+			isa = PBXGroup;
+			children = (
+				2F6B4AAB1D6DC831001A0D9A /* client */,
+				2F6B4AB81D6DC831001A0D9A /* IPacketHandler.h */,
+				2F6B4AB91D6DC831001A0D9A /* Packet.cpp */,
+				2F6B4ABA1D6DC831001A0D9A /* Packet.h */,
+				2F6B4ABB1D6DC831001A0D9A /* PacketHandler.cpp */,
+				2F6B4ABC1D6DC831001A0D9A /* PacketHandler.h */,
+				2F6B4ABD1D6DC831001A0D9A /* server */,
+			);
+			path = packet;
+			sourceTree = "<group>";
+		};
+		2F6B4AAB1D6DC831001A0D9A /* client */ = {
+			isa = PBXGroup;
+			children = (
+				2F6B4AAC1D6DC831001A0D9A /* ClientPacket.cpp */,
+				2F6B4AAD1D6DC831001A0D9A /* ClientPacket.h */,
+				2F6B4AAE1D6DC831001A0D9A /* GameServerLoginPacket.cpp */,
+				2F6B4AAF1D6DC831001A0D9A /* GameServerLoginPacket.h */,
+				2F6B4AB01D6DC831001A0D9A /* LoginCharacterPacket.cpp */,
+				2F6B4AB11D6DC831001A0D9A /* LoginCharacterPacket.h */,
+				2F6B4AB21D6DC831001A0D9A /* LoginRequestPacket.cpp */,
+				2F6B4AB31D6DC831001A0D9A /* LoginRequestPacket.h */,
+				2F6B4AB41D6DC831001A0D9A /* LoginSeedPacket.cpp */,
+				2F6B4AB51D6DC831001A0D9A /* LoginSeedPacket.h */,
+				2F6B4AB61D6DC831001A0D9A /* SelectServerPacket.cpp */,
+				2F6B4AB71D6DC831001A0D9A /* SelectServerPacket.h */,
+			);
+			path = client;
+			sourceTree = "<group>";
+		};
+		2F6B4ABD1D6DC831001A0D9A /* server */ = {
+			isa = PBXGroup;
+			children = (
+				2F6B4ABE1D6DC831001A0D9A /* CharacterListPacket.cpp */,
+				2F6B4ABF1D6DC831001A0D9A /* CharacterListPacket.h */,
+				2F6B4AC01D6DC831001A0D9A /* ConnectToGameServerPacket.cpp */,
+				2F6B4AC11D6DC831001A0D9A /* ConnectToGameServerPacket.h */,
+				2F6B4AC21D6DC831001A0D9A /* EnableFeaturesPacket.cpp */,
+				2F6B4AC31D6DC831001A0D9A /* EnableFeaturesPacket.h */,
+				2F6B4AC41D6DC831001A0D9A /* GameServerListPacket.cpp */,
+				2F6B4AC51D6DC831001A0D9A /* GameServerListPacket.h */,
+				2F6B4AC61D6DC831001A0D9A /* LoginDeniedPacket.cpp */,
+				2F6B4AC71D6DC831001A0D9A /* LoginDeniedPacket.h */,
+				2F6B4AC81D6DC831001A0D9A /* ServerPacket.cpp */,
+				2F6B4AC91D6DC831001A0D9A /* ServerPacket.h */,
+				2F6B4ACA1D6DC831001A0D9A /* ServerPackets.h */,
+			);
+			path = server;
+			sourceTree = "<group>";
+		};
+		2F6B4ACE1D6DC831001A0D9A /* platform-specific */ = {
+			isa = PBXGroup;
+			children = (
+				2F6B4ACF1D6DC831001A0D9A /* NetworkAdapteriOS.h */,
+				2F6B4AD01D6DC831001A0D9A /* NetworkAdapteriOS.mm */,
+			);
+			path = "platform-specific";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2F6B4B021D6DCC7E001A0D9A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F6B4B051D6DCCCF001A0D9A /* Game.h in Headers */,
+				2F6B4B061D6DCCCF001A0D9A /* Log.h in Headers */,
+				2F6B4B071D6DCCCF001A0D9A /* NetworkManager.h in Headers */,
+				2F6B4B081D6DCCCF001A0D9A /* ClientPacket.h in Headers */,
+				2F6B4B091D6DCCCF001A0D9A /* GameServerLoginPacket.h in Headers */,
+				2F6B4B0A1D6DCCCF001A0D9A /* LoginCharacterPacket.h in Headers */,
+				2F6B4B0B1D6DCCCF001A0D9A /* LoginRequestPacket.h in Headers */,
+				2F6B4B0C1D6DCCCF001A0D9A /* LoginSeedPacket.h in Headers */,
+				2F6B4B0D1D6DCCCF001A0D9A /* SelectServerPacket.h in Headers */,
+				2F6B4B0E1D6DCCCF001A0D9A /* IPacketHandler.h in Headers */,
+				2F6B4B0F1D6DCCCF001A0D9A /* Packet.h in Headers */,
+				2F6B4B101D6DCCCF001A0D9A /* PacketHandler.h in Headers */,
+				2F6B4B111D6DCCCF001A0D9A /* CharacterListPacket.h in Headers */,
+				2F6B4B121D6DCCCF001A0D9A /* EnableFeaturesPacket.h in Headers */,
+				2F6B4B131D6DCCCF001A0D9A /* GameServerListPacket.h in Headers */,
+				2F6B4B141D6DCCCF001A0D9A /* LoginDeniedPacket.h in Headers */,
+				2F6B4B151D6DCCCF001A0D9A /* ServerPacket.h in Headers */,
+				2F6B4B161D6DCCCF001A0D9A /* ServerPackets.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2F6B4A8E1D6DC7B6001A0D9A /* UltimaOnlineCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F6B4A981D6DC7B6001A0D9A /* Build configuration list for PBXNativeTarget "UltimaOnlineCore" */;
+			buildPhases = (
+				2F6B4A8B1D6DC7B6001A0D9A /* Sources */,
+				2F6B4A8C1D6DC7B6001A0D9A /* Frameworks */,
+				2F6B4A8D1D6DC7B6001A0D9A /* CopyFiles */,
+				2F6B4B021D6DCC7E001A0D9A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UltimaOnlineCore;
+			productName = UltimaOnlineCore;
+			productReference = 2F6B4A8F1D6DC7B6001A0D9A /* libUltimaOnlineCore.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2F6B4A871D6DC7B6001A0D9A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Hercules Junior";
+				TargetAttributes = {
+					2F6B4A8E1D6DC7B6001A0D9A = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					2F6B4AEA1D6DCB6C001A0D9A = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 2F6B4A8A1D6DC7B6001A0D9A /* Build configuration list for PBXProject "UltimaOnlineCore" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2F6B4A861D6DC7B6001A0D9A;
+			productRefGroup = 2F6B4A901D6DC7B6001A0D9A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2F6B4A8E1D6DC7B6001A0D9A /* UltimaOnlineCore */,
+				2F6B4AEA1D6DCB6C001A0D9A /* UltimaOnlineCore-Universal */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2F6B4AEE1D6DCBA0001A0D9A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# workaround for bitcode generation problem with Xcode 7.3\nunset TOOLCHAINS\n\n# configure directories for intermediate and final builds\nUNIVERSAL_OUTPUTFOLDER=${SRCROOT}/${PROJECT_NAME}-lib\n\n# build device and simulator versions\nxcodebuild -target ${PROJECT_NAME} ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\"\nxcodebuild -target ${PROJECT_NAME} ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphonesimulator BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\"\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n# create universal binary file using lipo\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/lib${PROJECT_NAME}.a\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/lib${PROJECT_NAME}.a\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/lib${PROJECT_NAME}.a\"\n\n# copy the header files to the final output folder\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/include\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\n# remove the build folder\nrm -rf ${SRCROOT}/build";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2F6B4A8B1D6DC7B6001A0D9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F6B4AD91D6DC831001A0D9A /* ClientPacket.cpp in Sources */,
+				2F6B4AD61D6DC831001A0D9A /* Log.cpp in Sources */,
+				2F6B4AE71D6DC831001A0D9A /* UOHuffman.cpp in Sources */,
+				2F6B4ADF1D6DC831001A0D9A /* Packet.cpp in Sources */,
+				2F6B4ADE1D6DC831001A0D9A /* SelectServerPacket.cpp in Sources */,
+				2F6B4AE91D6DC831001A0D9A /* main.mm in Sources */,
+				2F6B4AD81D6DC831001A0D9A /* NetworkManager.cpp in Sources */,
+				2F6B4AE01D6DC831001A0D9A /* PacketHandler.cpp in Sources */,
+				2F6B4AE31D6DC831001A0D9A /* EnableFeaturesPacket.cpp in Sources */,
+				2F6B4AE11D6DC831001A0D9A /* CharacterListPacket.cpp in Sources */,
+				2F6B4AD71D6DC831001A0D9A /* NetworkAdapter.cpp in Sources */,
+				2F6B4AE51D6DC831001A0D9A /* LoginDeniedPacket.cpp in Sources */,
+				2F6B4AE21D6DC831001A0D9A /* ConnectToGameServerPacket.cpp in Sources */,
+				2F6B4AD51D6DC831001A0D9A /* Game.cpp in Sources */,
+				2F6B4ADD1D6DC831001A0D9A /* LoginSeedPacket.cpp in Sources */,
+				2F6B4ADA1D6DC831001A0D9A /* GameServerLoginPacket.cpp in Sources */,
+				2F6B4AE81D6DC831001A0D9A /* NetworkAdapteriOS.mm in Sources */,
+				2F6B4AE61D6DC831001A0D9A /* ServerPacket.cpp in Sources */,
+				2F6B4ADB1D6DC831001A0D9A /* LoginCharacterPacket.cpp in Sources */,
+				2F6B4AE41D6DC831001A0D9A /* GameServerListPacket.cpp in Sources */,
+				2F6B4ADC1D6DC831001A0D9A /* LoginRequestPacket.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2F6B4A961D6DC7B6001A0D9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SYMROOT = "${SRCROOT}/${PROJECT_NAME}-lib";
+			};
+			name = Debug;
+		};
+		2F6B4A971D6DC7B6001A0D9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SYMROOT = "${SRCROOT}/${PROJECT_NAME}-lib";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2F6B4A991D6DC7B6001A0D9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2F6B4A9A1D6DC7B6001A0D9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		2F6B4AEC1D6DCB6C001A0D9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2F6B4AED1D6DCB6C001A0D9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2F6B4A8A1D6DC7B6001A0D9A /* Build configuration list for PBXProject "UltimaOnlineCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F6B4A961D6DC7B6001A0D9A /* Debug */,
+				2F6B4A971D6DC7B6001A0D9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F6B4A981D6DC7B6001A0D9A /* Build configuration list for PBXNativeTarget "UltimaOnlineCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F6B4A991D6DC7B6001A0D9A /* Debug */,
+				2F6B4A9A1D6DC7B6001A0D9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2F6B4AEB1D6DCB6C001A0D9A /* Build configuration list for PBXAggregateTarget "UltimaOnlineCore-Universal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F6B4AEC1D6DCB6C001A0D9A /* Debug */,
+				2F6B4AED1D6DCB6C001A0D9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2F6B4A871D6DC7B6001A0D9A /* Project object */;
+}
